@@ -1,0 +1,193 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+
+\title{Macroeconomics 2 Presentation \\ Part III equations}
+\author{Gugelmo Cavalheiro Dias Paulo \\ \and Mitash Nayanika \\ \and Wang Shang}
+\date{\today}
+
+
+\begin{document}
+
+\section{Baseline model}
+
+This model does not use strategic interactions, and takes place within a perfect information framework. 
+
+\section{Players}
+
+This model has two agents : the Firm and the Governement. 
+
+\subsection{Firm}
+
+The firm is a monopoly, that maximises its profit with respect to its production technology $g_{F,t}$ and its quantity of good produced $q$. The firm also receives a subsidy from the Government the less its good is polluting. We define its profit functions as : 
+
+\begin{equation}
+    \pi_{F,t}=q_{t}\cdot\left(p-c+s_{t}\cdot(g_{t}-g_{F,t})-\beta(g_{t}-g_{F,t})^{k}\right)
+\end{equation}
+
+Where : 
+\begin{itemize}
+    \item $q_{t}$ is the quantity of good produced and sold at time $t$
+    \item $p_{t}$ is the price at which one unit of good is sold
+    \item $c$ is the cost of production of unit of good
+    \item $s_{t}\in\left(0,1\right)$ the share at which the one unit of good is subsidized or taxed (depending on the level of pollution produced per unit) at time $_{t}$
+    \item $g_{t}\in\mathbb{R}_{+}$ is the accepted level of pollution produced by unit of good fixed by the government at time $t$
+    \item $g_{F,t}\in\mathbb{R}_{+}$ is the level of pollution created by the production of one unit by the firm at time $t$
+    \item $\beta\in\mathbb{R}_{+}$ is the coefficient of Research and Development (RD) cost
+    \item $k>1$ is the difficulty of upgrading the production technology so that it pollutes less
+\end{itemize}
+
+\subsection{Government}
+
+The goal of the government is to maximise the social welfare function. The social welfare function here is defined as a utility function taking into account economic activities and the risk of environmental disaster. We define it as : 
+
+\begin{equation}
+    u_{G,t}=\text{EA}_{t}^{\alpha}\cdot\text{EQ}_{t}^{1-\alpha}
+\end{equation}
+
+Where : 
+\begin{itemize}
+    \item $\text{EA}_{t}$ is the Economic Activity of society at time $t$
+    \item $EQ_{t}$ is the Environmental Quality of the world at time $t$
+    \item $\alpha \in \left(0,1\right)$ is the relative importance of Economic Activity compared to the Environmental Quality of the World.
+\end{itemize}
+
+This function has two main properties : 
+
+\begin{enumerate}
+    \item It has positive but decreasing returns for both Economic Activity and Environmental Quality : 
+
+$$\frac{\partial u_{G,t}}{\partial \text{EA}_{t}}=\alpha\cdot\text{EA}_{t}^{\alpha-1}\cdot\text{EQ}_{t}^{1-\alpha}>0$$
+$$\frac{\partial u_{G,t}}{\partial \text{EQ}_{t}}=(1-\alpha)\cdot\text{EA}_{t}^{\alpha}\cdot\text{EQ}_{t}^{-\alpha}>0$$
+
+$$\frac{\partial^2 u_{G,t}}{\partial^2 \text{EA}_{t}}=\alpha\cdot(\alpha-1)\cdot\text{EA}_{t}^{\alpha-2}\cdot\text{EQ}_{t}^{1-\alpha}<0$$
+$$\frac{\partial^2 u_{G,t}}{\partial^2 \text{EQ}_{t}}=(1-\alpha)\cdot(-\alpha)\cdot\text{EA}_{t}^{\alpha-1}\cdot\text{EQ}_{t}^{-\alpha-1}<0$$
+
+    \item Both Economic Activity and Environmental Quality are complementary goods, as the cross-derivative is positive :
+    
+$$\frac{\partial^2 u_{G,t}}{\partial \text{EA}_{t} \partial \text{EQ}_{t}}=\alpha\cdot(1-\alpha)\cdot\text{EA}_{t}^{\alpha-1}\cdot\text{EQ}_{t}^{-\alpha}>0$$
+\end{enumerate}
+
+\section{Environment Quality}
+
+The environment quality $EQ_{t}$ depends on the pollution in nature. We define : 
+
+\begin{equation}
+    EQ_{t}=\left(R(X_{t})\cdot D(X_{t})+d(X_{t})\right)^{-1}
+\end{equation}
+
+\begin{equation}
+    \begin{cases}
+        X_{t}\sim \text{AR}(1) \\
+        \iff \\
+        X_{t}=\rho\cdot X_{t-1}+P_{F,t}+\varepsilon_{t}
+    \end{cases}
+\end{equation}
+
+Where :
+\begin{itemize}
+    \item $R(X_t)\in\left[0,1\right]$ the risk of a natural disaster happening at time $t$
+    \item $D(X_t)\in\mathbb{R}_{+}$ the potential dammage caused by a natural disaster happening at time $t$
+    \item $d(X_t)\in\mathbb{R}_{+}$ the normal dammage caused by pollution at time $t$
+    \item $X_{t}\in\mathbb{R}_{+}$ the total quantity of pollution in nature at time $t$
+    \item $\rho \in \left[0,1\right]$ the persistence level of pollution in nature
+    \item $P_{F,t}=q_{t}\cdot g_{F,t}$ the quantity of pollution produced by the firm at time ${t}$
+    \item $\varepsilon_{t}$ a white noise 
+\end{itemize}
+
+\section{Model solution}
+
+\subsection{Firm's problem}
+
+In this simplified model, we first solve the Firm's problem for one period : 
+
+$$ \max_{g_{F,t},q_{t}}{\pi_{F,t}=q_{t}\cdot\left(p-c+s(g_{t}-g_{F,t})-\beta(g_{t}-g_{F,t})^{k}\right)}$$
+
+We solve the First Order Conditions. If we derive with respect to the polluting level : 
+
+$$\frac{\partial \pi_{F,t}}{\partial g_{F,t}}=0$$
+$$\iff$$
+$$q_t\cdot(-s_{t}+\beta\cdot k(g_{t}-g_{F,t})^{k-1})=0$$
+$$\iff$$
+$$\beta\cdot k(g_{t}-g_{F,t})^{k-1}=s$$
+$$\iff$$
+\begin{equation}
+    g_{F,t}=g_{t}-\left(\frac{s_{t}}{\beta\cdot k}\right)^{\frac{1}{k-1}}
+\end{equation}
+
+Then, if we derive with respect to the quantity produced :
+$$\frac{\partial \pi_{F,t}}{\partial q_{t}}=0$$
+$$\iff$$
+$$p-c+s_{t}\cdot(g_{t}-g_{F,t})-\beta\cdot(g_{t}-g_{F,t})^{k}=0$$
+$$\iff$$
+\begin{equation}
+    p=c-s_{t}\cdot(g_{t}-g_{F,t})+\beta\cdot(g_{t}-g_{F,t})^{k} 
+\end{equation}
+
+Now if we plug equation (5) into (6) we get : 
+
+$$ p=c-s_{t}\cdot\left(g_{t}-g_{t}-\left(\frac{s}{\beta\cdot k}\right)^{\frac{1}{k-1}}\right)+\beta\cdot\left(g_{t}-g_{t}-\left(\frac{s}{\beta\cdot k}\right)^{\frac{1}{k-1}}\right)^{k}$$
+$$\iff$$
+$$p=c+s_{t}\cdot\left(\frac{s_{t}}{\beta\cdot k}\right)^{\frac{1}{k-1}}-\beta\left(\left(\frac{s}{\beta\cdot k}\right)^{\frac{1}{k-1}}\right)^{k}$$
+$$\iff$$
+$$p=c+s_{t}\cdot\left(\frac{s_{t}}{\beta\cdot k}\right)^{\frac{1}{k-1}}-\beta\left(\frac{s}{\beta\cdot k}\right)^{\frac{k}{k-1}}$$
+$$\iff$$
+$$p=c+s_{t}^{\frac{k-1}{k-1}+\frac{1}{k-1}}\cdot\left({\beta\cdot k}\right)^{-\frac{1}{k-1}}-\beta^{\frac{k-1}{k-1}-\frac{k}{k-1}}\cdot\left(\frac{s}{k}\right)^{\frac{k}{k-1}}$$
+$$\iff$$
+$$p=c+s_{t}^{\frac{k}{k-1}}\cdot\left({\beta\cdot k}\right)^{-\frac{1}{k-1}}-\beta^{-\frac{1}{k-1}}\cdot\left(\frac{s}{k}\right)^{\frac{k}{k-1}}$$
+$$\iff$$
+$$p=c+s_{t}^{\frac{k}{k-1}}\cdot\left[\left({\beta\cdot k}\right)^{-\frac{1}{k-1}}-\beta^{-\frac{1}{k-1}}\cdot\left(\frac{1}{k}\right)^{\frac{k}{k-1}}\right]$$
+$$\iff$$
+$$p=c+s_{t}^{\frac{k}{k-1}}\cdot{\beta}^{-\frac{1}{k-1}}\cdot\left(k^{\frac{1}{k-1}}-\left(\frac{1}{k}\right)^{\frac{k}{k-1}}\right)$$
+$$\iff$$
+$$p=c+\left(\frac{s_{t}^k}{\beta}\right)^{\frac{1}{k-1}}\cdot\left(k^{\frac{1}{k-1}}-{k}^{-\frac{k}{k-1}}\right)$$
+$$\iff$$
+$$p=c+\left(\frac{s_{t}^k}{\beta}\right)^{\frac{1}{k-1}}\cdot{k}^{\frac{1}{k-1}}\cdot\left(1-{k}^{-k}\right)$$
+$$\iff$$
+\begin{equation}
+    p=c+\left(\frac{s_{t}^k\cdot k}{\beta}\right)^{\frac{1}{k-1}}\cdot\left(1-{k}^{-k}\right)
+\end{equation}
+
+Therefore, the maximised profit of the firm will be : 
+
+$$\pi_{F,t}=q_{t}\cdot\left(p-c+s_{t}\cdot\left(g_{t}-g_{F,t}\right)-\beta\left(g_{t}-g_{F,t}\right)^{k}\right)$$
+$$\iff$$
+\begin{equation*}
+    \begin{split}
+        \pi_{F,t} = & q_{t}\cdot(c+\left(\frac{s_{t}^k\cdot k}{\beta}\right)^{\frac{1}{k-1}}\cdot\left(1-{k}^{-k}\right)-c+s_{t}\left[g_{t}-g_{t}-\left(\frac{s_{t}}{\beta\cdot k}\right)^{\frac{1}{k-1}}\right] \\
+        & -\beta\left[g_{t}-g_{t}-\left(\frac{s_{t}}{\beta\cdot k}\right)^{\frac{1}{k-1}}\right]^{k}) \\
+    \end{split}
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \begin{split}
+        \pi_{F,t} = & q_{t}\cdot\left(\left(\frac{s_{t}^k\cdot k}{\beta}\right)^{\frac{1}{k-1}}\cdot\left(1-{k}^{-k}\right)-s_{t}\left[\left(\frac{s_{t}}{\beta\cdot k}\right)^{\frac{1}{k-1}}\right]
+        +\beta\left[\left(\frac{s_{t}}{\beta\cdot k}\right)^{\frac{1}{k-1}}\right]^{k}\right)
+    \end{split}
+\end{equation*}
+$$\iff$$
+$$ \pi_{F,t} = q_{t}\cdot\left(\left(\frac{s_{t}^k\cdot k}{\beta}\right)^{\frac{1}{k-1}}\cdot\left(1-{k}^{-k}\right)-\left(\frac{s_{t}^k\cdot k}{\beta}\right)^{\frac{1}{k-1}}\cdot\left(1-{k}^{-k}\right)\right) $$
+$$\iff$$
+\begin{equation}
+    \pi_{F,t} = q_{t}\cdot0\iff\pi_{F,t}=0    
+\end{equation}
+
+At the optimal, the profit of the firm will be null. 
+
+\subsection{Government problem}
+
+In this simplified model, we say that the Economic Activity $\text{EA}_{t}$ is equivalent to the profit of the firm. Also, we have the following maximisation program : 
+
+$$\max_{s_{t},g_{t}}{u_{G,t}=\pi_{F,t}^\alpha\cdot\left(R(X_{t})\cdot D(X_{t})+d(X_{t})\right)^{\alpha-1}}$$
+subject to : 
+\begin{equation*}
+    \begin{cases}
+        s_{t}\left(g_{t}-g_{F,t}\right) q_{t} \le \pi_{F,t} \\
+        X_t=X_{t-1}+q_{t}\cdot g_{F,t}+\varepsilon_{t} \\
+        X_0=0
+    \end{cases}
+\end{equation*}
+
+
+\end{document}
