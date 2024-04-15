@@ -104,16 +104,18 @@ In this simplified model, we first solve the Firm's problem for one period :
 
 $$ \max_{g_{F,t},q_{t}}{\pi_{F,t}=q_{t}\cdot\left(p-c+s(g_{t}-g_{F,t})\right)-\beta(g_{t}-g_{F,t})^{k}}$$
 
-We solve the First Order Conditions. If we derive with respect to the polluting level : 
+We solve the First Order Conditions. If we derive with respect to the pollution level per unit produced : 
 
 $$\frac{\partial \pi_{F,t}}{\partial g_{F,t}}=0$$
 $$\iff$$
-$$q_t\cdot(-s_{t}+\beta\cdot k(g_{t}-g_{F,t})^{k-1})=0$$
+$$-s_{t}\cdot q_t+\beta\cdot k\cdot(g_{t}-g_{F,t})^{k-1}=0$$
 $$\iff$$
-$$\beta\cdot k(g_{t}-g_{F,t})^{k-1}=s$$
+$$\beta\cdot k(g_{t}-g_{F,t})^{k-1}=s_{t}\cdot q_{t}$$
+$$\iff$$
+$$\left(\frac{s_{t}\cdot q_{t}}{\beta\cdot k}^{\frac{1}{k-1}}\right)=g_{t}-g_{F,t}$$
 $$\iff$$
 \begin{equation}
-    g_{F,t}=g_{t}-\left(\frac{s_{t}}{\beta\cdot k}\right)^{\frac{1}{k-1}}
+    g_{F,t}=g_{t}-\left(\frac{s_{t}\cdot q_{t}}{\beta\cdot k}\right)^{\frac{1}{k-1}}
 \end{equation}
 
 Then, if we derive with respect to the quantity produced :
