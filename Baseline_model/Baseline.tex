@@ -2,9 +2,10 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{bm}
+\usepackage[dvipsnames]{xcolor}
 
-\title{Macroeconomics 2 Presentation \\ Part III equations}
-\author{Chambon Lionel \\ Gugelmo Cavalheiro Dias Paulo \\ Soufflet Morgane \\ Pavlovich Karina}
+\title{Microeconomics Project}
+\author{Chambon Lionel \\ Gugelmo Cavalheiro Dias Paulo \\ Pavlovich Karina \\ Soufflet Morgane}
 \date{\today}
 
 
@@ -90,8 +91,8 @@ The environment quality $EQ_{t}$ depends on the pollution in nature. We define :
 Where :
 \begin{itemize}
     \item $R(X_t)\in\left[0,1\right]$ the risk of a natural disaster happening at time $t$
-    \item $D(X_t)\in\mathbb{R}_{+}$ the potential dammage caused by a natural disaster happening at time $t$
-    \item $d(X_t)\in\mathbb{R}_{+}$ the normal dammage caused by pollution at time $t$
+    \item $D(X_t)\in\mathbb{R}_{+}$ the potential damage caused by a natural disaster happening at time $t$
+    \item $d(X_t)\in\mathbb{R}_{+}$ the normal damage caused by pollution at time $t$
     \item $X_{t}\in\mathbb{R}_{+}$ the total quantity of pollution in nature at time $t$
     \item $\rho \in \left[0,1\right]$ the persistence level of pollution in nature
     \item $P_{F,t}=q_{t}\cdot g_{F,t}$ the quantity of pollution produced by the firm at time ${t}$
@@ -116,70 +117,54 @@ $$-s_{t}\cdot q_t+\beta\cdot k\cdot(g_{t}-g_{F,t})^{k-1}=0$$
 $$\iff$$
 $$\beta\cdot k(g_{t}-g_{F,t})^{k-1}=s_{t}\cdot q_{t}$$
 $$\iff$$
-$$\left(\frac{s_{t}\cdot q_{t}}{\beta\cdot k}^{\frac{1}{k-1}}\right)=g_{t}-g_{F,t}$$
+$$\left(\frac{s_{t}\cdot q_{t}}{\beta\cdot k}\right)^{\frac{1}{k-1}}=g_{t}-g_{F,t}$$
 $$\iff$$
 \begin{equation}
     g_{F,t}=g_{t}-\left(\frac{s_{t}\cdot q_{t}}{\beta\cdot k}\right)^{\frac{1}{k-1}}
 \end{equation}
 
-Then, if we derive with respect to the quantity produced :
+This equation is interesting to comment : for the firm, the optimal level of pollution per unit decreases with the subsidy of the government.
+
+\textcolor{red}{WHAT ELSE TO COMMENT ?}
+
+Now, if we plug this expression of the optimal pollution per unit into the profit function, we get : 
+$$\pi_{F,t}=q_{t}\cdot\left(p-c+s_{t}\cdot(g_{t}-g_{F,t})\right)-\beta(g_{t}-g_{F,t})^{k}$$
+$$\iff$$
+$$\pi_{F,t}=q_{t}\cdot\left(p-c+s_{t}\cdot\left(g_{t}-\left(g_{t}-\left(\frac{s_{t}\cdot q_{t}}{\beta\cdot k}\right)^{\frac{1}{k-1}}\right)\right)\right)-\beta\left(g_{t}-\left(g_{t}-\left(\frac{s_{t}\cdot q_{t}}{\beta\cdot k}\right)^{\frac{1}{k-1}}\right)\right)^{k}$$
+$$\iff$$
+$$\pi_{F,t}=q_{t}\cdot\left(p-c+s_{t}\cdot\left(\frac{s_{t}\cdot q_{t}}{\beta\cdot k}\right)^{\frac{1}{k-1}}\right)-\beta\cdot\left(\frac{s_{t}\cdot q_{t}}{\beta\cdot k}\right)^{\frac{k}{k-1}}$$
+$$\iff$$
+$$\pi_{F,t}=q_{t}\cdot\left(p-c\right)+q_{t}\cdot\left(s_{t}^{\frac{k-1}{k-1}+\frac{1}{k-1}}\cdot\left(\frac{q_{t}}{\beta\cdot k}\right)^{\frac{1}{k-1}}\right)-\beta^{\frac{k-1}{k-1}-\frac{k}{k-1}}\cdot\left(\frac{s_{t}\cdot q_{t}}{k}\right)^{\frac{k}{k-1}}$$
+$$\iff$$
+$$\pi_{F,t}=q_{t}\cdot\left(p-c\right)+q_{t}^{\frac{k-1}{k-1}+\frac{1}{k-1}}\cdot s_{t}^{\frac{k}{k-1}}\cdot\left(\frac{1}{\beta\cdot k}\right)^{\frac{1}{k-1}}-\beta^{-\frac{1}{k-1}}\cdot\left(\frac{s_{t}\cdot q_{t}}{k}\right)^{\frac{k}{k-1}}$$
+$$\iff$$
+$$\pi_{F,t}=q_{t}\cdot\left(p-c\right)+q_{t}^{\frac{k}{k-1}}\cdot s_{t}^{\frac{k}{k-1}}\cdot\left(\frac{1}{\beta\cdot k}\right)^{\frac{1}{k-1}}-\beta^{-\frac{1}{k-1}}\cdot\left(\frac{s_{t}\cdot q_{t}}{k}\right)^{\frac{k}{k-1}}$$
+$$\iff$$
+$$\pi_{F,t}=q_{t}\cdot\left(p-c\right)+\left(\frac{s_{t}^{k}\cdot q_{t}^{k}}{\beta\cdot k}\right)^{\frac{1}{k-1}}-\left(\frac{s_{t}^{k}\cdot q_{t}^{k}}{\beta\cdot k^{k}}\right)^{\frac{1}{k-1}}$$
+$$\iff$$
+$$\pi_{F,t}=q_{t}\cdot\left(p-c\right)+q_{t}^{\frac{k}{k-1}}\left[\left(\frac{s_{t}^{k}}{\beta\cdot k}\right)^{\frac{1}{k-1}}-\left(\frac{s_{t}^{k}}{\beta\cdot k^{k}}\right)^{\frac{1}{k-1}}\right]$$
+$$\iff$$
+$$\pi_{F,t}=q_{t}\cdot\left(p-c\right)+q_{t}^{\frac{k}{k-1}}\left[\left(\frac{s_{t}^{k}}{\beta}\right)^{\frac{1}{k-1}}\left(k^{-\frac{1}{k-1}}-k^{-\frac{k}{k-1}}\right)\right]$$
+$$\iff$$
+$$\pi_{F,t}=q_{t}\cdot\left(p-c\right)+q_{t}^{\frac{k}{k-1}}\left[\left(\frac{s_{t}^{k}}{\beta}\right)^{\frac{1}{k-1}}\left(k^{-\frac{1}{k-1}}(1-k^{\frac{1-k}{k-1}})\right)\right]$$
+$$\iff$$
+$$\pi_{F,t}=q_{t}\cdot\left(p-c\right)+q_{t}^{\frac{k}{k-1}}\left[\left(\frac{s_{t}^{k}}{\beta}\right)^{\frac{1}{k-1}}k^{-\frac{1}{k-1}}\left(\frac{k-1}{k}\right)\right]$$
+$$\iff$$
+$$\pi_{F,t}=q_{t}\cdot\left(p-c\right)+q_{t}^{\frac{k}{k-1}}\left(\frac{s_{t}^{k}}{\beta\cdot k}\right)^{\frac{1}{k-1}}\left(\frac{k-1}{k}\right)$$
+
+Then, if we differentiate the profit with respect to the quantity produced :
 $$\frac{\partial \pi_{F,t}}{\partial q_{t}}=0$$
 $$\iff$$
-$$p-c+s_{t}\cdot(g_{t}-g_{F,t})-\beta\cdot(g_{t}-g_{F,t})^{k}=0$$
+$$\frac{\partial}{\partial q_{t}}\left(q_{t}\cdot\left(p-c\right)+q_{t}^{\frac{k}{k-1}}\left(\frac{s_{t}^{k}}{\beta\cdot k}\right)^{\frac{1}{k-1}}\left(\frac{k-1}{k}\right)\right)=0$$
 $$\iff$$
+$$p-c+\left(\frac{k}{k-1}\right)q_{t}^{\frac{1}{k-1}}\left(\frac{s_{t}^{k}}{\beta\cdot k}\right)^{\frac{1}{k-1}}\left(\frac{k-1}{k}\right)=0$$
+$$\iff$$
+$$p-c+q_{t}^{\frac{1}{k-1}}\left(\frac{s_{t}^{k}}{\beta\cdot k}\right)^{\frac{1}{k-1}}=0$$
+$$\iff$$
+
 \begin{equation}
-    p=c-s_{t}\cdot(g_{t}-g_{F,t})+\beta\cdot(g_{t}-g_{F,t})^{k} 
+    p=c-q_{t}^{\frac{1}{k-1}}\left(\frac{s_{t}^{k}}{\beta\cdot k}\right)^{\frac{1}{k-1}}
 \end{equation}
-
-Now if we plug equation (5) into (6) we get : 
-
-$$ p=c-s_{t}\cdot\left(g_{t}-g_{t}-\left(\frac{s}{\beta\cdot k}\right)^{\frac{1}{k-1}}\right)+\beta\cdot\left(g_{t}-g_{t}-\left(\frac{s}{\beta\cdot k}\right)^{\frac{1}{k-1}}\right)^{k}$$
-$$\iff$$
-$$p=c+s_{t}\cdot\left(\frac{s_{t}}{\beta\cdot k}\right)^{\frac{1}{k-1}}-\beta\left(\left(\frac{s}{\beta\cdot k}\right)^{\frac{1}{k-1}}\right)^{k}$$
-$$\iff$$
-$$p=c+s_{t}\cdot\left(\frac{s_{t}}{\beta\cdot k}\right)^{\frac{1}{k-1}}-\beta\left(\frac{s}{\beta\cdot k}\right)^{\frac{k}{k-1}}$$
-$$\iff$$
-$$p=c+s_{t}^{\frac{k-1}{k-1}+\frac{1}{k-1}}\cdot\left({\beta\cdot k}\right)^{-\frac{1}{k-1}}-\beta^{\frac{k-1}{k-1}-\frac{k}{k-1}}\cdot\left(\frac{s}{k}\right)^{\frac{k}{k-1}}$$
-$$\iff$$
-$$p=c+s_{t}^{\frac{k}{k-1}}\cdot\left({\beta\cdot k}\right)^{-\frac{1}{k-1}}-\beta^{-\frac{1}{k-1}}\cdot\left(\frac{s}{k}\right)^{\frac{k}{k-1}}$$
-$$\iff$$
-$$p=c+s_{t}^{\frac{k}{k-1}}\cdot\left[\left({\beta\cdot k}\right)^{-\frac{1}{k-1}}-\beta^{-\frac{1}{k-1}}\cdot\left(\frac{1}{k}\right)^{\frac{k}{k-1}}\right]$$
-$$\iff$$
-$$p=c+s_{t}^{\frac{k}{k-1}}\cdot{\beta}^{-\frac{1}{k-1}}\cdot\left(k^{\frac{1}{k-1}}-\left(\frac{1}{k}\right)^{\frac{k}{k-1}}\right)$$
-$$\iff$$
-$$p=c+\left(\frac{s_{t}^k}{\beta}\right)^{\frac{1}{k-1}}\cdot\left(k^{\frac{1}{k-1}}-{k}^{-\frac{k}{k-1}}\right)$$
-$$\iff$$
-$$p=c+\left(\frac{s_{t}^k}{\beta}\right)^{\frac{1}{k-1}}\cdot{k}^{\frac{1}{k-1}}\cdot\left(1-{k}^{-k}\right)$$
-$$\iff$$
-\begin{equation}
-    p=c+\left(\frac{s_{t}^k\cdot k}{\beta}\right)^{\frac{1}{k-1}}\cdot\left(1-{k}^{-k}\right)
-\end{equation}
-
-Therefore, the maximised profit of the firm will be : 
-
-$$\pi_{F,t}=q_{t}\cdot\left(p-c+s_{t}\cdot\left(g_{t}-g_{F,t}\right)-\beta\left(g_{t}-g_{F,t}\right)^{k}\right)$$
-$$\iff$$
-\begin{equation*}
-    \begin{split}
-        \pi_{F,t} = & q_{t}\cdot(c+\left(\frac{s_{t}^k\cdot k}{\beta}\right)^{\frac{1}{k-1}}\cdot\left(1-{k}^{-k}\right)-c+s_{t}\left[g_{t}-g_{t}-\left(\frac{s_{t}}{\beta\cdot k}\right)^{\frac{1}{k-1}}\right] \\
-        & -\beta\left[g_{t}-g_{t}-\left(\frac{s_{t}}{\beta\cdot k}\right)^{\frac{1}{k-1}}\right]^{k}) \\
-    \end{split}
-\end{equation*}
-$$\iff$$
-\begin{equation*}
-    \begin{split}
-        \pi_{F,t} = & q_{t}\cdot\left(\left(\frac{s_{t}^k\cdot k}{\beta}\right)^{\frac{1}{k-1}}\cdot\left(1-{k}^{-k}\right)-s_{t}\left[\left(\frac{s_{t}}{\beta\cdot k}\right)^{\frac{1}{k-1}}\right]
-        +\beta\left[\left(\frac{s_{t}}{\beta\cdot k}\right)^{\frac{1}{k-1}}\right]^{k}\right)
-    \end{split}
-\end{equation*}
-$$\iff$$
-$$ \pi_{F,t} = q_{t}\cdot\left(\left(\frac{s_{t}^k\cdot k}{\beta}\right)^{\frac{1}{k-1}}\cdot\left(1-{k}^{-k}\right)-\left(\frac{s_{t}^k\cdot k}{\beta}\right)^{\frac{1}{k-1}}\cdot\left(1-{k}^{-k}\right)\right) $$
-$$\iff$$
-\begin{equation}
-    \pi_{F,t} = q_{t}\cdot0\iff\pi_{F,t}=0    
-\end{equation}
-
-At the optimal, the profit of the firm will be null. 
 
 \subsection{Government problem}
 
