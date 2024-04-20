@@ -95,21 +95,6 @@ $$\frac{\partial^2 u_{G,t}}{\partial^2 \text{EQ}_{t}}=(1-\alpha)\cdot(-\alpha)\c
 $$\frac{\partial^2 u_{G,t}}{\partial \text{EA}_{t} \partial \text{EQ}_{t}}=\alpha\cdot(1-\alpha)\cdot\text{EA}_{t}^{\alpha-1}\cdot\text{EQ}_{t}^{-\alpha}>0$$
 \end{enumerate}
 
-\section{Environment Quality}
-
-The environment quality $EQ_{t}$ at time $t$ depends of the pollution in nature at time $t$. We can define in a simple, one period context : 
-
-\begin{equation}
-    EQ_{t}:=e^{-q_{t}\cdot g_{t}}
-\end{equation}
-
-Where :
-\begin{itemize}
-    \item $q_{t}\cdot g_{t}$ is the quantity of pollution produced at time $t$
-\end{itemize}
-
-Note here that we don't take into account past pollution in this simplified model. This will be taken into account in the next sections. 
-
 \section{Model solution}
 
 \subsection{Firm's problem}
@@ -198,19 +183,44 @@ $$\pi_{t}=\frac{1}{c_{t}}\cdot\left({\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sqrt{\tau_
 
 \subsection{Government problem}
 
-In this simplified model, we say that the Economic Activity $\text{EA}_{t}$ is equivalent to the profit of the firm. Also, we have the following maximisation program : 
+In this simplified model, we say that the Economic Activity $\text{EA}_{t}$ is equivalent to the profit of the firm.
 
-$$\max_{\tau_{t},g_{t}}{u_{G,t}=\pi_{F,t}^\alpha\cdot\left(D(X_{t})\right)^{\alpha-1}}$$
-subject to : 
+The environment quality $EQ_{t}$ at time $t$ depends of the pollution in nature at time $t$. We can define in a simple, one period context : 
+
+\begin{equation}
+    EQ_{t}:=e^{-q_{t}\cdot g_{t}}
+\end{equation}
+
+Where :
+\begin{itemize}
+    \item $q_{t}\cdot g_{t}$ is the quantity of pollution produced at time $t$
+\end{itemize}
+
+Note here that we don't take into account past pollution in this simplified model. This will be taken into account in the next sections. 
+
+Thus, the maximisation program of the government is : 
+
 \begin{equation*}
-    \begin{cases}
-        X_t=\rho\cdot X_{t-1}+q_{t}\cdot g_{F,t}+\varepsilon_{t} \\
-        X_0=0
-    \end{cases}
+    \max_{\tau_{t}}{u_{G,t}=\pi_{t}^{\alpha}\cdot e^{-q_{t}\cdot g_{t}\cdot(1-\alpha)}}
 \end{equation*}
 
-Thus writing all the terms we have : 
+Now, in this simple framework, the government knows the allocation decisions of the firm, and more specifically knows that the values of $r_{t}$ and $m_{t}$. We can thus rewrite the maximisation program of the government as : 
 
-$$u_{G,t}=2$$
+$$
+    \max_{\tau_{t}}{u_{G,t}=\pi_{t}^{\alpha}\cdot {e^{-q_{t}\cdot g_{t}}}^{(1-\alpha)}}
+$$
+$$\iff$$
+$$\max_{\tau_{t}}{\left(\frac{1}{c_{t}}\cdot\left({\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sqrt{\tau_{t}}}\right)^{2}\right)^{\alpha}\cdot {e^{-q_{t}\cdot g_{t}}}^{(1-\alpha)}}$$
+
+Now : 
+$$q_{t}\cdot g_{t}=\frac{m_{t}}{c_{t}}\cdot\frac{1}{r_{t}}=\frac{1}{c_{t}}\left(B_{t}-\sqrt{\frac{B_{t}\cdot \tau_{t}}{p_{t}-c_{t}}}\right)\left(\frac{\sqrt{p_{t}-c_{t}}}{\sqrt{B_{t}\cdot \tau_{t}}}\right)$$
+$$\iff$$
+$$q_{t}\cdot g_{t}=\frac{1}{c_{t}}\cdot \left(\frac{\sqrt{B_{t}\cdot(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}-1\right)=\frac{1}{c_{t}}\cdot \frac{\sqrt{B_{t}\cdot(p_{t}-c_{t})}-\sqrt{\tau_{t}}}{\sqrt{\tau_{t}}}$$
+
+Thus the objective function of the government is : 
+$${u_{G,t}=\left(\frac{1}{c_{t}}\cdot\left({\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sqrt{\tau_{t}}}\right)^{2}\right)^{\alpha}\cdot {e^{-\frac{1}{c_{t}}\cdot \frac{\sqrt{B_{t}\cdot(p_{t}-c_{t})}-\sqrt{\tau_{t}}}{\sqrt{\tau_{t}}}}}^{(1-\alpha)}}$$
+$$\iff$$
+$${u_{G,t}=\frac{1}{c_{t}^\alpha}\cdot\left({\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sqrt{\tau_{t}}}\right)^{2\cdot\alpha}\cdot {e^{-(1-\alpha)\cdot\frac{1}{c_{t}}\cdot \frac{\sqrt{B_{t}\cdot(p_{t}-c_{t})}-\sqrt{\tau_{t}}}{\sqrt{\tau_{t}}}}}}$$
+
 
 \end{document}
