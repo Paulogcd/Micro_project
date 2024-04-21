@@ -8,7 +8,9 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: ./Baseline_model/Baseline.pdf
+        text: Baseline model 
+      - href: about.qmd
 
 format:
   html:
