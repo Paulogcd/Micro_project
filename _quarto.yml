@@ -1,8 +1,9 @@
 project:
   type: website
+  output-dir: docs
 
 website:
-  title: "."
+  title: "Microeconomics 2 project website"
   navbar:
     left:
       - href: index.qmd
