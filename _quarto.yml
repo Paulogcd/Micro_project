@@ -11,6 +11,7 @@ website:
       - href: ./Baseline_model/Baseline.pdf
         text: Baseline model 
       - href: about.qmd
+        text: About
 
 format:
   html:
