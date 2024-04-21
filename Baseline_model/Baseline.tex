@@ -3,16 +3,29 @@
 \usepackage{amssymb}
 \usepackage{bm}
 \usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
 
 \title{Microeconomics Project}
 \author{Chambon Lionel \\ Gugelmo Cavalheiro Dias Paulo \\ Pavlovich Karina \\ Soufflet Morgane}
 \date{\today}
-
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
 
 \begin{document}
 
 \maketitle
 
+\begin{abstract}
+    
+\end{abstract}
+\pagebreak
+\tableofcontents
+\pagebreak
 \section{Baseline model}
 
 This model does not use strategic interactions, and takes place within a perfect information framework. 
@@ -159,27 +172,11 @@ $$\iff$$
 \end{equation}
 
 
-Thus, the maximum profit of the firm is : 
-
-$$\pi_{t}= \frac{m_{t}}{c_{t}}\cdot\left(p_{t}-c_{t}\right)-\tau_{t}\cdot \frac{m_{t}}{c_{t}}\cdot \frac{1}{r_{t}}$$
-$$\iff$$
-$$\pi_{t}=\frac{m_{t}}{c_{t}}\cdot\left(p_{t}-c_{t}-\frac{\tau_{t}}{r_{t}}\right)$$
-$$\iff$$
-$$\pi_{t}=\frac{m_{t}}{c_{t}}\cdot\left(p_{t}-c_{t}-\frac{\tau_{t}}{\sqrt{\frac{B_{t}\cdot \tau_{t}}{p_{t}-c_{t}}}}\right)$$
-$$\iff$$
-$$\pi_{t}=\frac{m_{t}}{c_{t}}\cdot\left(p_{t}-c_{t}-\sqrt{\frac{\tau_{t}(p_{t}-c_{t})}{B_{t}}}\right)$$
-$$\iff$$
-$$\pi_{t}=\frac{B_{t}-\sqrt{\frac{B_{t}\cdot \tau_{t}}{p_{t}-c_{t}}}}{c_{t}}\cdot\left(p_{t}-c_{t}-\sqrt{\frac{\tau_{t}(p_{t}-c_{t})}{B_{t}}}\right)$$
-$$\iff$$
-$$\pi_{t}=\frac{1}{c_{t}}\cdot\sqrt{B_{t}}\left(\sqrt{B_{t}}-\sqrt{\frac{\tau_{t}}{p_{t}-c_{t}}}\right)\cdot\left(\frac{\sqrt{B_{t}}(p_{t}-c_{t})-\sqrt{\tau(p_{t}-c_{t})}}{\sqrt{B_{t}}}\right)$$
-$$\iff$$
-$$\pi_{t}=\frac{1}{c_{t}}\cdot\left(\sqrt{B_{t}}-\sqrt{\frac{\tau_{t}}{p_{t}-c_{t}}}\right)\cdot\left(\sqrt{B_{t}}(p_{t}-c_{t})-\sqrt{\tau(p_{t}-c_{t})}\right)$$
-$$\iff$$
-$$\pi_{t}=\frac{1}{c_{t}}\cdot\left(\frac{\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sqrt{\tau_{t}}}{\sqrt{p_{t}-c_{t}}}\right)\cdot\left(\sqrt{B_{t}}(p_{t}-c_{t})-\sqrt{\tau(p_{t}-c_{t})}\right)$$
-$$\iff$$
-$$\pi_{t}=\frac{1}{c_{t}}\cdot\left({\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sqrt{\tau_{t}}}\right)\cdot\left(\sqrt{B_{t}}(\sqrt{p_{t}-c_{t}})-\sqrt{\tau}\right)$$
-$$\iff$$
-$$\pi_{t}=\frac{1}{c_{t}}\cdot\left({\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sqrt{\tau_{t}}}\right)^{2}$$
+Thus, the maximum profit of the firm is\footnotemark[1] : 
+\footnotetext[1]{\hyperref[sec:proof1]{You can find the proof of this result here.}}
+\begin{equation}
+    \pi_{t}=\frac{1}{c_{t}}\cdot\left({\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sqrt{\tau_{t}}}\right)^{2}
+\end{equation}
 
 \subsection{Government problem}
 
@@ -188,7 +185,7 @@ In this simplified model, we say that the Economic Activity $\text{EA}_{t}$ is e
 The environment quality $EQ_{t}$ at time $t$ depends of the pollution in nature at time $t$. We can define in a simple, one period context : 
 
 \begin{equation}
-    EQ_{t}:=e^{-q_{t}\cdot g_{t}}
+    EQ_{t}\equiv e^{-q_{t}\cdot g_{t}}
 \end{equation}
 
 Where :
@@ -222,5 +219,219 @@ $${u_{G,t}=\left(\frac{1}{c_{t}}\cdot\left({\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sqr
 $$\iff$$
 $${u_{G,t}=\frac{1}{c_{t}^\alpha}\cdot\left({\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sqrt{\tau_{t}}}\right)^{2\cdot\alpha}\cdot {e^{-(1-\alpha)\cdot\frac{1}{c_{t}}\cdot \frac{\sqrt{B_{t}\cdot(p_{t}-c_{t})}-\sqrt{\tau_{t}}}{\sqrt{\tau_{t}}}}}}$$
 
+\begin{equation}
+    u_{G,t}=\frac{e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot\left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha}}{c^{\alpha}\cdot e^{\frac{1}{c_{t}}\cdot(1-\alpha)\cdot\frac{\sqrt{B_{t}(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}}}
+\end{equation}
+
+To maximises this utility function, we set the derivative of it with respect to $\tau_{t}$ to zero, and we solve for $\tau_{t}$, and the pollution tax $\tau$ that maximises the objective function of the government is such that\footnotemark[2] : 
+\footnotetext[2]{\hyperref[sec:proof2]{You can find the proof of this result here.}}
+\begin{equation}
+    \tau_{t}^{*}=\frac{B_{t}\left(p_{t}-c_{t}\right)(1-\alpha)\left[{\alpha \cdot 4\cdot c_{t}+1-\alpha}-\sqrt{(1-\alpha)^{2}+\alpha\cdot8\cdot c_{t}(1-\alpha)}\right]} {\alpha^{2} \cdot 8\cdot c_{t}^{2}}
+\end{equation}
+
+After analysis of this term, it appears that : 
+\begin{itemize}
+    \item It has a negative relationship with the manufacturing cost $c_{t}$
+    \item It has a negative relationship with the preference of the governement for economic activity $\alpha$
+    \item It has a positive relationship with the budget of the firm cost $B_{t}$
+    \item It has a positive relationship with the selling price $p_{t}$
+\end{itemize}
+
+\subsection{Interpretations and extensions}
+
+The baseline model happens in only one period, in a simultaneous way, with perfect imperfection. In reality, information is imperfect, decisions of the government and of the firm are not simultaneous, and pollution is persistent. The following extensions will try to develop a framework in which those elements are studied.
+
+\pagebreak
+\section{Appendix}
+
+\subsection{Maximum Profit}
+\label{sec:proof1}
+$$\pi_{t}= \frac{m_{t}}{c_{t}}\cdot\left(p_{t}-c_{t}\right)-\tau_{t}\cdot \frac{m_{t}}{c_{t}}\cdot \frac{1}{r_{t}}$$
+$$\iff$$
+$$\pi_{t}=\frac{m_{t}}{c_{t}}\cdot\left(p_{t}-c_{t}-\frac{\tau_{t}}{r_{t}}\right)$$
+$$\iff$$
+$$\pi_{t}=\frac{m_{t}}{c_{t}}\cdot\left(p_{t}-c_{t}-\frac{\tau_{t}}{\sqrt{\frac{B_{t}\cdot \tau_{t}}{p_{t}-c_{t}}}}\right)$$
+$$\iff$$
+$$\pi_{t}=\frac{m_{t}}{c_{t}}\cdot\left(p_{t}-c_{t}-\sqrt{\frac{\tau_{t}(p_{t}-c_{t})}{B_{t}}}\right)$$
+$$\iff$$
+$$\pi_{t}=\frac{B_{t}-\sqrt{\frac{B_{t}\cdot \tau_{t}}{p_{t}-c_{t}}}}{c_{t}}\cdot\left(p_{t}-c_{t}-\sqrt{\frac{\tau_{t}(p_{t}-c_{t})}{B_{t}}}\right)$$
+$$\iff$$
+$$\pi_{t}=\frac{1}{c_{t}}\cdot\sqrt{B_{t}}\left(\sqrt{B_{t}}-\sqrt{\frac{\tau_{t}}{p_{t}-c_{t}}}\right)\cdot\left(\frac{\sqrt{B_{t}}(p_{t}-c_{t})-\sqrt{\tau(p_{t}-c_{t})}}{\sqrt{B_{t}}}\right)$$
+$$\iff$$
+$$\pi_{t}=\frac{1}{c_{t}}\cdot\left(\sqrt{B_{t}}-\sqrt{\frac{\tau_{t}}{p_{t}-c_{t}}}\right)\cdot\left(\sqrt{B_{t}}(p_{t}-c_{t})-\sqrt{\tau(p_{t}-c_{t})}\right)$$
+$$\iff$$
+$$\pi_{t}=\frac{1}{c_{t}}\cdot\left(\frac{\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sqrt{\tau_{t}}}{\sqrt{p_{t}-c_{t}}}\right)\cdot\left(\sqrt{B_{t}}(p_{t}-c_{t})-\sqrt{\tau(p_{t}-c_{t})}\right)$$
+$$\iff$$
+$$\pi_{t}=\frac{1}{c_{t}}\cdot\left({\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sqrt{\tau_{t}}}\right)\cdot\left(\sqrt{B_{t}}(\sqrt{p_{t}-c_{t}})-\sqrt{\tau}\right)$$
+$$\iff$$
+\begin{equation}\tag{6}
+    \pi_{t}=\frac{1}{c_{t}}\cdot\left({\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sqrt{\tau_{t}}}\right)^{2}
+\end{equation}
+
+\subsection{Optimal pollution tax}
+\label{sec:proof2}
+
+To find the optimla pollution tax, we set the derivative of the social utility function to zero : 
+
+$$u_{G,t}=\frac{e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot\left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha}}{c^{\alpha}\cdot e^{\frac{1}{c_{t}}\cdot(1-\alpha)\cdot\frac{\sqrt{B_{t}(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}}}$$
+
+We see that this function is of form $f(\tau)=\frac{u(\tau)}{v(\tau)}$, thus its derivative is of form $f'(\tau)=\frac{u'(\tau)v(\tau)-v'(\tau)u(\tau)}{v^2(x)}$. To have its derivative equal to zero, we thus only need $u'(\tau)v(\tau)-v'(\tau)u(\tau)=0$, with :
+
+\begin{equation*}
+    \begin{cases}
+        u(\tau)= e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot\left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha} \\
+        v(\tau)= c^{\alpha}\cdot e^{\frac{1}{c_{t}}\cdot(1-\alpha)\cdot\frac{\sqrt{B_{t}(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}}
+    \end{cases}
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \begin{cases}
+        \frac{\partial u(\tau)}{\partial \tau}= e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot \tau^{-\frac{1}{2}}\cdot \left(-\frac{1}{2}\right)\cdot 2\alpha \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha-1} \\
+        \frac{\partial v(\tau)}{\partial \tau}= c_{t}^{\alpha}\cdot e^{\frac{1}{c_{t}}\cdot(1-\alpha)\cdot\frac{\sqrt{B_{t}(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}}\cdot \frac{1}{c_{t}}(1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\left(-\frac{1}{2}\right)\cdot\tau^{-\frac{3}{2}}
+    \end{cases}
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \begin{cases}
+        \frac{\partial u(\tau)}{\partial \tau}= -\alpha\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot \tau^{-\frac{1}{2}}\cdot \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha-1} \\
+        \frac{\partial v(\tau)}{\partial \tau}= -\frac{c_{t}^{\alpha-1}}{2}\cdot e^{\frac{1}{c_{t}}\cdot(1-\alpha)\cdot\frac{\sqrt{B_{t}(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}}\cdot (1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\tau^{-\frac{3}{2}}
+    \end{cases}
+\end{equation*}
+
+Thus we can compute : 
+
+\begin{equation*}
+    u'(\tau)v(\tau)-v'(\tau)u(\tau)=0
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \begin{split}
+    & -\alpha\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot \tau^{-\frac{1}{2}}\cdot \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha-1} \cdot  c^{\alpha}\cdot e^{\frac{1}{c_{t}}\cdot(1-\alpha)\cdot\frac{\sqrt{B_{t}(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}} \\
+    & +\frac{c_{t}^{\alpha-1}}{2}\cdot e^{\frac{1}{c_{t}}\cdot(1-\alpha)\cdot\frac{\sqrt{B_{t}(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}}\cdot (1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\tau^{-\frac{3}{2}}\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot\left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha}=0
+    \end{split}
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \begin{split}
+    & \alpha\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot \tau^{-\frac{1}{2}}\cdot \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha-1} \cdot  c^{\alpha} = \\
+    & \frac{c_{t}^{\alpha-1}}{2}\cdot (1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\tau^{-\frac{3}{2}}\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot\left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha}
+    \end{split}
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \begin{split}
+    & \alpha\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot \tau^{-\frac{1}{2}}\cdot \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{-1} \cdot  c^{\alpha} = \\
+    & \frac{c_{t}^{\alpha-1}}{2}\cdot (1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\tau^{-\frac{3}{2}}\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}
+    \end{split}
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \begin{split}
+    & \alpha\cdot \tau^{-\frac{1}{2}}\cdot \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{-1} \cdot  c^{\alpha} = \\
+    & \frac{c_{t}^{\alpha-1}}{2}\cdot (1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\tau^{-\frac{3}{2}} 
+    \end{split}
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \alpha\cdot \tau^{-\frac{1}{2}}\cdot \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{-1} = \frac{1}{2\cdot c_{t}}\cdot (1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\tau^{-\frac{3}{2}} 
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \alpha\cdot \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{-1} = \frac{1}{2\cdot c_{t}}\cdot (1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\tau_{t}^{-1} 
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \alpha = \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)\cdot \frac{1}{2\cdot c_{t}}\cdot (1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\tau_{t}^{-1} 
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}}= \frac{\left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)}{\tau_{t}} 
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \tau_{t}\cdot\frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}}= \sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}} 
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \tau_{t}\cdot\frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}+\sqrt{\tau_{t}}\cdot\sqrt{B_{t}(p_{t}-c_{t})}-B_{t}(p_{t}-c_{t})=0
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \tau_{t}\cdot\frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}-B_{t}(p_{t}-c_{t})=-\sqrt{\tau_{t}}\cdot\sqrt{B_{t}(p_{t}-c_{t})}
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \tau_{t}^{2}\cdot\left(\frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}\right)^{2}-2\cdot\tau_{t}\cdot B_{t}\left(p_{t}-c_{t}\right)\cdot \frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}+\left(B_{t}(p_{t}-c_{t})\right)^{2}={\tau_{t}}\cdot{B_{t}(p_{t}-c_{t})}
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \tau_{t}^{2}\cdot\left(\frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}\right)^{2}+\tau_{t}\cdot(-2)\cdot B_{t}\left(p_{t}-c_{t}\right)\cdot \frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}-{\tau_{t}}\cdot{B_{t}(p_{t}-c_{t})}+\left(B_{t}(p_{t}-c_{t})\right)^{2}=0
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \tau_{t}^{2}\cdot\left(\frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}\right)^{2}+\tau_{t}\cdot B_{t}\left(p_{t}-c_{t}\right)\left((-2)\cdot \frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}-1\right)+\left(B_{t}(p_{t}-c_{t})\right)^{2}=0
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \tau_{t}^{2}\cdot\left(\frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}\right)^{2}+\tau_{t}\cdot \left(-B_{t}\right)\left(p_{t}-c_{t}\right)\left(2\cdot \frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}+1\right)+\left(B_{t}(p_{t}-c_{t})\right)^{2}=0
+\end{equation*}
+
+This is a standard quadratic equation $\tau_{t}^{2}\cdot a+\tau_{t}\cdot b + c =0$ that accepts two solutions : 
+
+$$\tau^{*}=\frac{-b\pm\sqrt{b^2-4\cdot a\cdot c}}{2\cdot a}$$
+
+With : 
+
+\begin{itemize}
+    \item $a = \left(\frac{\alpha \cdot 2\cdot c_{t}}{1-\alpha}\right)^{2}$
+    \item $b = \left(-B_{t}\right)\left(p_{t}-c_{t}\right)\left(2\cdot \frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}+1\right)$
+    \item $c = \left(B_{t}(p_{t}-c_{t})\right)^{2}$
+\end{itemize}
+
+The solution $\tau^{*}=\frac{-b+\sqrt{b^2+4\cdot a\cdot c}}{2\cdot a}$ does not make sense in the context of this problem, so we have the optimal tax : 
+
+\begin{equation*}
+    \tau_{t}^{*}=\frac{-b-\sqrt{b^2-4\cdot a\cdot c}}{2\cdot a}
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \tau_{t}^{*}=\frac{B_{t}\left(p_{t}-c_{t}\right)\left(2\cdot \frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}+1\right)-\sqrt{\left[\left(-B_{t}\right)\left(p_{t}-c_{t}\right)\left(2\cdot \frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}+1\right)\right]^2-4\cdot \left(\frac{\alpha \cdot 2\cdot c_{t}}{1-\alpha}\right)^{2}\cdot \left(B_{t}(p_{t}-c_{t})\right)^{2}}}{2\cdot \left(\frac{\alpha \cdot 2\cdot c_{t}}{1-\alpha}\right)^{2}}
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \tau_{t}^{*}=\frac{B_{t}\left(p_{t}-c_{t}\right)\left(2\cdot \frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}+1\right)-\sqrt{\left(B_{t}\left(p_{t}-c_{t}\right)\right)^{2}\left(2\cdot \frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}+1\right)^2-4\cdot \left(\frac{\alpha \cdot 2\cdot c_{t}}{1-\alpha}\right)^{2}\cdot \left(B_{t}(p_{t}-c_{t})\right)^{2}}}{2\cdot \left(\frac{\alpha \cdot 2\cdot c_{t}}{1-\alpha}\right)^{2}}
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \tau_{t}^{*}=\frac{B_{t}\left(p_{t}-c_{t}\right)\left(2\cdot \frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}+1\right)-\sqrt{\left(B_{t}\left(p_{t}-c_{t}\right)\right)^{2}\left[\left(2\cdot \frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}+1\right)^2-4\cdot \left(\frac{\alpha \cdot 2\cdot c_{t}}{1-\alpha}\right)^{2}\right]}}{2\cdot \left(\frac{\alpha \cdot 2\cdot c_{t}}{1-\alpha}\right)^{2}}
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \tau_{t}^{*}=\frac{B_{t}\left(p_{t}-c_{t}\right)\left(2\cdot \frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}+1\right)-B_{t}\left(p_{t}-c_{t}\right)\sqrt{\left(2\cdot \frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}+1\right)^2-4\cdot \left(\frac{\alpha \cdot 2\cdot c_{t}}{1-\alpha}\right)^{2}}}{2\cdot \left(\frac{\alpha \cdot 2\cdot c_{t}}{1-\alpha}\right)^{2}}
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \tau_{t}^{*}=\frac{B_{t}\left(p_{t}-c_{t}\right)\left[\left(2\cdot \frac{\alpha \cdot 2\cdot c_{t}}{1-\alpha}+1\right)-\sqrt{\left(2\cdot \frac{\alpha \cdot 2\cdot c_{t}}{1-\alpha}+1\right)^2-4\cdot \left(\frac{\alpha \cdot 2\cdot c_{t}}{1-\alpha}\right)^{2}}\right]}{2\cdot \left(\frac{\alpha \cdot 2\cdot c_{t}}{1-\alpha}\right)^{2}}
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \tau_{t}^{*}=\frac{B_{t}\left(p_{t}-c_{t}\right)\left[\left(\frac{\alpha \cdot 4\cdot c_{t}+1-\alpha}{1-\alpha}\right)-\sqrt{\left(\frac{\alpha \cdot 4\cdot c_{t}+1-\alpha}{1-\alpha}\right)^2-\frac{\alpha^{2} \cdot 16\cdot c_{t}^{2}}{(1-\alpha)^{2}}}\right]}{\frac{\alpha^{2} \cdot 8\cdot c_{t}^{2}}{(1-\alpha)^{2}}}
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \tau_{t}^{*}=\frac{B_{t}\left(p_{t}-c_{t}\right)\left[\left(\frac{\alpha \cdot 4\cdot c_{t}+1-\alpha}{1-\alpha}\right)-\sqrt{\frac{1}{(1-\alpha)^{2}}\left(\left(\alpha \cdot 4\cdot c_{t}+1-\alpha\right)^2-\left(\alpha^{2} \cdot 16\cdot c_{t}^{2}\right)\right)}\right]} {\frac{\alpha^{2} \cdot 8\cdot c_{t}^{2}}{(1-\alpha)^{2}}}
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \tau_{t}^{*}=\frac{B_{t}\left(p_{t}-c_{t}\right)\left[\left(\frac{\alpha \cdot 4\cdot c_{t}+1-\alpha}{1-\alpha}\right)-\frac{1}{(1-\alpha)}\sqrt{\alpha^{2} \cdot 16\cdot c_{t}^{2}+(1-\alpha)^{2}+2\cdot \alpha\cdot4\cdot c_{t}(1-\alpha)-\alpha^{2} \cdot 16\cdot c_{t}^{2}}\right]} {\frac{\alpha^{2} \cdot 8\cdot c_{t}^{2}}{(1-\alpha)^{2}}}
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \tau_{t}^{*}=\frac{B_{t}\left(p_{t}-c_{t}\right)(\frac{1}{1-\alpha})\left[{\alpha \cdot 4\cdot c_{t}+1-\alpha}-\sqrt{(1-\alpha)^{2}+2\cdot \alpha\cdot4\cdot c_{t}(1-\alpha)}\right]} {\frac{\alpha^{2} \cdot 8\cdot c_{t}^{2}}{(1-\alpha)^{2}}}
+\end{equation*}
+$$\iff$$
+\begin{equation*}\tag{9}
+    \tau_{t}^{*}=\frac{B_{t}\left(p_{t}-c_{t}\right)(1-\alpha)\left[{\alpha \cdot 4\cdot c_{t}+1-\alpha}-\sqrt{(1-\alpha)^{2}+\alpha\cdot8\cdot c_{t}(1-\alpha)}\right]} {\alpha^{2} \cdot 8\cdot c_{t}^{2}}
+\end{equation*}
 
 \end{document}
