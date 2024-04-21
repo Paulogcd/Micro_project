@@ -1,0 +1,12 @@
+name: "Microeconomics 2 project website"
+navbar:
+  title: "NAVBAR"
+left:
+  - text: "Home"
+href: index.html
+right: 
+  - icon: fa-envelope fa-lg
+href: http://github.com/paulogcd/
+  output:
+  html_document:
+  theme: darkly

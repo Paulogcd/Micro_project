@@ -1,0 +1,9 @@
+---
+title: "Microeconomics 2 project website"
+---
+
+Hello there, this is the website of the Microeconomics project of Chambon Lionel, Gugelmo Cavalheiro Dias Paulo, Pavlovich Karina, and Soufflet Morgane ! 
+
+We are doing our project about a Game Theoretical approach of pollution taxation.  
+
+Blabla text.
