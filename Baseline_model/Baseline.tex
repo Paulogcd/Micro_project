@@ -157,7 +157,7 @@ $$\iff$$
     m_{t}=\frac{1}{\tau_{t}}\left(r_{t}^{2}(p_{t}-c_{t})-r_{t}\cdot \tau_{t}\right)=\frac{r_{t}^{2}\left(p_{t}-c_{t}\right)}{\tau_{t}}-r_{t}
 \end{equation}
 
-This equation gives us the optimal level of manufacturing investment for the firm. We can see that it has a negative relationship with $\tau$ the pollution tax, which seems logical : the bigger the pollution tax, the more incentives the firm has to invest in R\&D instead of simply manufacturing goods with high pollution level. 
+This equation gives us the optimal level of manufacturing investment for the firm. We can see that it has a negative relationship with $\tau_{t}$ the pollution tax, which seems logical : the bigger the pollution tax, the more incentives the firm has to invest in R\&D instead of simply manufacturing goods with high pollution level. 
 
 From that, we can identify the optimal level of research $r$ for the firm :
 
@@ -223,7 +223,7 @@ $${u_{G,t}=\frac{1}{c_{t}^\alpha}\cdot\left({\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sq
     u_{G,t}=\frac{e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot\left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha}}{c^{\alpha}\cdot e^{\frac{1}{c_{t}}\cdot(1-\alpha)\cdot\frac{\sqrt{B_{t}(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}}}
 \end{equation}
 
-To maximises this utility function, we set the derivative of it with respect to $\tau_{t}$ to zero, and we solve for $\tau_{t}$, and the pollution tax $\tau$ that maximises the objective function of the government is such that\footnotemark[2] : 
+To maximises this utility function, we set the derivative of it with respect to $\tau_{t}$ to zero, and we solve for $\tau_{t}$, and the pollution tax $\tau_{t}^{*}$ that maximises the objective function of the government is such that\footnotemark[2] : 
 \footnotetext[2]{\hyperref[sec:proof2]{You can find the proof of this result here.}}
 \begin{equation}
     \tau_{t}^{*}=\frac{B_{t}\left(p_{t}-c_{t}\right)(1-\alpha)\left[{\alpha \cdot 4\cdot c_{t}+1-\alpha}-\sqrt{(1-\alpha)^{2}+\alpha\cdot8\cdot c_{t}(1-\alpha)}\right]} {\alpha^{2} \cdot 8\cdot c_{t}^{2}}
@@ -256,13 +256,13 @@ $$\pi_{t}=\frac{m_{t}}{c_{t}}\cdot\left(p_{t}-c_{t}-\sqrt{\frac{\tau_{t}(p_{t}-c
 $$\iff$$
 $$\pi_{t}=\frac{B_{t}-\sqrt{\frac{B_{t}\cdot \tau_{t}}{p_{t}-c_{t}}}}{c_{t}}\cdot\left(p_{t}-c_{t}-\sqrt{\frac{\tau_{t}(p_{t}-c_{t})}{B_{t}}}\right)$$
 $$\iff$$
-$$\pi_{t}=\frac{1}{c_{t}}\cdot\sqrt{B_{t}}\left(\sqrt{B_{t}}-\sqrt{\frac{\tau_{t}}{p_{t}-c_{t}}}\right)\cdot\left(\frac{\sqrt{B_{t}}(p_{t}-c_{t})-\sqrt{\tau(p_{t}-c_{t})}}{\sqrt{B_{t}}}\right)$$
+$$\pi_{t}=\frac{1}{c_{t}}\cdot\sqrt{B_{t}}\left(\sqrt{B_{t}}-\sqrt{\frac{\tau_{t}}{p_{t}-c_{t}}}\right)\cdot\left(\frac{\sqrt{B_{t}}(p_{t}-c_{t})-\sqrt{\tau_{t}(p_{t}-c_{t})}}{\sqrt{B_{t}}}\right)$$
 $$\iff$$
-$$\pi_{t}=\frac{1}{c_{t}}\cdot\left(\sqrt{B_{t}}-\sqrt{\frac{\tau_{t}}{p_{t}-c_{t}}}\right)\cdot\left(\sqrt{B_{t}}(p_{t}-c_{t})-\sqrt{\tau(p_{t}-c_{t})}\right)$$
+$$\pi_{t}=\frac{1}{c_{t}}\cdot\left(\sqrt{B_{t}}-\sqrt{\frac{\tau_{t}}{p_{t}-c_{t}}}\right)\cdot\left(\sqrt{B_{t}}(p_{t}-c_{t})-\sqrt{\tau_{t}(p_{t}-c_{t})}\right)$$
 $$\iff$$
-$$\pi_{t}=\frac{1}{c_{t}}\cdot\left(\frac{\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sqrt{\tau_{t}}}{\sqrt{p_{t}-c_{t}}}\right)\cdot\left(\sqrt{B_{t}}(p_{t}-c_{t})-\sqrt{\tau(p_{t}-c_{t})}\right)$$
+$$\pi_{t}=\frac{1}{c_{t}}\cdot\left(\frac{\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sqrt{\tau_{t}}}{\sqrt{p_{t}-c_{t}}}\right)\cdot\left(\sqrt{B_{t}}(p_{t}-c_{t})-\sqrt{\tau_{t}(p_{t}-c_{t})}\right)$$
 $$\iff$$
-$$\pi_{t}=\frac{1}{c_{t}}\cdot\left({\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sqrt{\tau_{t}}}\right)\cdot\left(\sqrt{B_{t}}(\sqrt{p_{t}-c_{t}})-\sqrt{\tau}\right)$$
+$$\pi_{t}=\frac{1}{c_{t}}\cdot\left({\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sqrt{\tau_{t}}}\right)\cdot\left(\sqrt{B_{t}}(\sqrt{p_{t}-c_{t}})-\sqrt{\tau_{t}}\right)$$
 $$\iff$$
 \begin{equation}\tag{6}
     \pi_{t}=\frac{1}{c_{t}}\cdot\left({\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sqrt{\tau_{t}}}\right)^{2}
@@ -275,65 +275,65 @@ To find the optimla pollution tax, we set the derivative of the social utility f
 
 $$u_{G,t}=\frac{e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot\left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha}}{c^{\alpha}\cdot e^{\frac{1}{c_{t}}\cdot(1-\alpha)\cdot\frac{\sqrt{B_{t}(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}}}$$
 
-We see that this function is of form $f(\tau)=\frac{u(\tau)}{v(\tau)}$, thus its derivative is of form $f'(\tau)=\frac{u'(\tau)v(\tau)-v'(\tau)u(\tau)}{v^2(x)}$. To have its derivative equal to zero, we thus only need $u'(\tau)v(\tau)-v'(\tau)u(\tau)=0$, with :
+We see that this function is of form $f(\tau_{t})=\frac{u(\tau_{t})}{v(\tau_{t})}$, thus its derivative is of form $f'(\tau_{t})=\frac{u'(\tau)v(\tau_{t})-v'(\tau_{t})u(\tau_{t})}{v^2(\tau_{t})}$. To have its derivative equal to zero, we thus only need $u'(\tau_{t})v(\tau_{t})-v'(\tau_{t})u(\tau_{t})=0$, with :
 
 \begin{equation*}
     \begin{cases}
-        u(\tau)= e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot\left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha} \\
-        v(\tau)= c^{\alpha}\cdot e^{\frac{1}{c_{t}}\cdot(1-\alpha)\cdot\frac{\sqrt{B_{t}(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}}
+        u(\tau_{t})= e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot\left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha} \\
+        v(\tau_{t})= c^{\alpha}\cdot e^{\frac{1}{c_{t}}\cdot(1-\alpha)\cdot\frac{\sqrt{B_{t}(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}}
     \end{cases}
 \end{equation*}
 $$\iff$$
 \begin{equation*}
     \begin{cases}
-        \frac{\partial u(\tau)}{\partial \tau}= e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot \tau^{-\frac{1}{2}}\cdot \left(-\frac{1}{2}\right)\cdot 2\alpha \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha-1} \\
-        \frac{\partial v(\tau)}{\partial \tau}= c_{t}^{\alpha}\cdot e^{\frac{1}{c_{t}}\cdot(1-\alpha)\cdot\frac{\sqrt{B_{t}(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}}\cdot \frac{1}{c_{t}}(1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\left(-\frac{1}{2}\right)\cdot\tau^{-\frac{3}{2}}
+        \frac{\partial u(\tau_{t})}{\partial \tau_{t}}= e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot \tau_{t}^{-\frac{1}{2}}\cdot \left(-\frac{1}{2}\right)\cdot 2\alpha \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha-1} \\
+        \frac{\partial v(\tau_{t})}{\partial \tau_{t}}= c_{t}^{\alpha}\cdot e^{\frac{1}{c_{t}}\cdot(1-\alpha)\cdot\frac{\sqrt{B_{t}(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}}\cdot \frac{1}{c_{t}}(1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\left(-\frac{1}{2}\right)\cdot\tau_{t}^{-\frac{3}{2}}
     \end{cases}
 \end{equation*}
 $$\iff$$
 \begin{equation*}
     \begin{cases}
-        \frac{\partial u(\tau)}{\partial \tau}= -\alpha\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot \tau^{-\frac{1}{2}}\cdot \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha-1} \\
-        \frac{\partial v(\tau)}{\partial \tau}= -\frac{c_{t}^{\alpha-1}}{2}\cdot e^{\frac{1}{c_{t}}\cdot(1-\alpha)\cdot\frac{\sqrt{B_{t}(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}}\cdot (1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\tau^{-\frac{3}{2}}
+        \frac{\partial u(\tau_{t})}{\partial \tau_{t}}= -\alpha\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot \tau_{t}^{-\frac{1}{2}}\cdot \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha-1} \\
+        \frac{\partial v(\tau_{t})}{\partial \tau_{t}}= -\frac{c_{t}^{\alpha-1}}{2}\cdot e^{\frac{1}{c_{t}}\cdot(1-\alpha)\cdot\frac{\sqrt{B_{t}(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}}\cdot (1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\tau_{t}^{-\frac{3}{2}}
     \end{cases}
 \end{equation*}
 
 Thus we can compute : 
 
 \begin{equation*}
-    u'(\tau)v(\tau)-v'(\tau)u(\tau)=0
+    u'(\tau_{t})v(\tau_{t})-v'(\tau_{t})u(\tau_{t})=0
 \end{equation*}
 $$\iff$$
 \begin{equation*}
     \begin{split}
-    & -\alpha\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot \tau^{-\frac{1}{2}}\cdot \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha-1} \cdot  c^{\alpha}\cdot e^{\frac{1}{c_{t}}\cdot(1-\alpha)\cdot\frac{\sqrt{B_{t}(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}} \\
-    & +\frac{c_{t}^{\alpha-1}}{2}\cdot e^{\frac{1}{c_{t}}\cdot(1-\alpha)\cdot\frac{\sqrt{B_{t}(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}}\cdot (1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\tau^{-\frac{3}{2}}\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot\left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha}=0
+    & -\alpha\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot \tau_{t}^{-\frac{1}{2}}\cdot \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha-1} \cdot  c^{\alpha}\cdot e^{\frac{1}{c_{t}}\cdot(1-\alpha)\cdot\frac{\sqrt{B_{t}(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}} \\
+    & +\frac{c_{t}^{\alpha-1}}{2}\cdot e^{\frac{1}{c_{t}}\cdot(1-\alpha)\cdot\frac{\sqrt{B_{t}(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}}\cdot (1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\tau_{t}^{-\frac{3}{2}}\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot\left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha}=0
     \end{split}
 \end{equation*}
 $$\iff$$
 \begin{equation*}
     \begin{split}
-    & \alpha\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot \tau^{-\frac{1}{2}}\cdot \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha-1} \cdot  c^{\alpha} = \\
-    & \frac{c_{t}^{\alpha-1}}{2}\cdot (1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\tau^{-\frac{3}{2}}\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot\left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha}
+    & \alpha\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot \tau_{t}^{-\frac{1}{2}}\cdot \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha-1} \cdot  c^{\alpha} = \\
+    & \frac{c_{t}^{\alpha-1}}{2}\cdot (1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\tau_{t}^{-\frac{3}{2}}\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot\left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha}
     \end{split}
 \end{equation*}
 $$\iff$$
 \begin{equation*}
     \begin{split}
-    & \alpha\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot \tau^{-\frac{1}{2}}\cdot \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{-1} \cdot  c^{\alpha} = \\
-    & \frac{c_{t}^{\alpha-1}}{2}\cdot (1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\tau^{-\frac{3}{2}}\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}
+    & \alpha\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot \tau_{t}^{-\frac{1}{2}}\cdot \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{-1} \cdot  c^{\alpha} = \\
+    & \frac{c_{t}^{\alpha-1}}{2}\cdot (1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\tau_{t}^{-\frac{3}{2}}\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}
     \end{split}
 \end{equation*}
 $$\iff$$
 \begin{equation*}
     \begin{split}
-    & \alpha\cdot \tau^{-\frac{1}{2}}\cdot \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{-1} \cdot  c^{\alpha} = \\
-    & \frac{c_{t}^{\alpha-1}}{2}\cdot (1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\tau^{-\frac{3}{2}} 
+    & \alpha\cdot \tau_{t}^{-\frac{1}{2}}\cdot \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{-1} \cdot  c^{\alpha} = \\
+    & \frac{c_{t}^{\alpha-1}}{2}\cdot (1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\tau_{t}^{-\frac{3}{2}} 
     \end{split}
 \end{equation*}
 $$\iff$$
 \begin{equation*}
-    \alpha\cdot \tau^{-\frac{1}{2}}\cdot \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{-1} = \frac{1}{2\cdot c_{t}}\cdot (1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\tau^{-\frac{3}{2}} 
+    \alpha\cdot \tau_{t}^{-\frac{1}{2}}\cdot \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{-1} = \frac{1}{2\cdot c_{t}}\cdot (1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\tau_{t}^{-\frac{3}{2}} 
 \end{equation*}
 $$\iff$$
 \begin{equation*}
