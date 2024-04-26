@@ -2,6 +2,11 @@
 title: "About"
 ---
 
-We are a group of four students of Sciences Po Paris, currently in our first year of Master of Research in Economics. 
+We are a group of four students of Sciences Po Paris, currently in our first year of Master of Research in Economics, and this Website aims to help us present in an extended way our work for our class of Microeconomics 2.
 
-This website aims to present in an extended way our work for our class of Microeconomics 2.
+Feel free to reach out to us vie our academic email (first_name.family_name@sciencespo.fr) : 
+
+- CHAMBON Linonel
+- GUGELMO CAVALHEIRO DIAS Paulo
+- SOUFLET Morgane
+- PAVLOVICH Karina

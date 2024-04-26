@@ -6,12 +6,6 @@ website:
   title: "Microeconomics 2 project website"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - href: ./Baseline_model/Baseline.pdf
-        text: Baseline model 
-      - href: ./Introduction/Introduction.pdf
-        text: Introduction
       - href: about.qmd
         text: About
 

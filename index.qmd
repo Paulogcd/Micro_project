@@ -2,6 +2,11 @@
 title: "Microeconomics 2 project website"
 ---
 
-Hello there, this is the website of the Microeconomics project of Chambon Lionel, Gugelmo Cavalheiro Dias Paulo, Pavlovich Karina, and Soufflet Morgane ! 
 
-We are doing our project about a Game Theoretical approach of pollution taxation.  
+Hello, we are a four students of the Master of Research in Economics of Sciences Po, and this is the website of our currently ongoing Microeconomics 2 project, focused on a game theoretical approach of pollution taxation. 
+
+Here you can find some useful resources : 
+
+- [Introduction](./Resources/Introduction/Introduction.pdf) ([Here the LaTeX code](./Resources/Introduction/Introduction.tex))
+- [Baseline model](./Resources/Baseline_model/Baseline.pdf) ([Here the LaTeX code](./Resources/Baseline_model/Baseline.tex))
+- [References file in LaTex](./Resources/References/bibliography.bib)
