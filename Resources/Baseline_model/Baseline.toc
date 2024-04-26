@@ -1,13 +1,21 @@
-\contentsline {section}{\numberline {1}Baseline model}{3}{section.1}%
-\contentsline {section}{\numberline {2}Players}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Firm}{3}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Technology of the firm}{3}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}Profit of the firm}{3}{subsubsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.2}Government}{4}{subsection.2.2}%
-\contentsline {section}{\numberline {3}Model solution}{5}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Firm's problem}{5}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Government problem}{6}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Interpretations and extensions}{8}{subsection.3.3}%
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {section}{\numberline {2}Literature review}{3}{section.2}%
+\contentsline {section}{\numberline {3}Baseline Model}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Players}{4}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Firm}{5}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Technology of the firm}{5}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Profit of the firm}{5}{subsubsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.3}Government}{6}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Model solution}{6}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Firm's problem}{6}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Government problem}{7}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Interpretations and extensions}{8}{subsection.3.7}%
 \contentsline {section}{\numberline {4}Appendix}{9}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Maximum Profit}{9}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Optimal pollution tax}{10}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.1}Properties of the utility function of the government}{9}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Diminishing returns of economic activity and environmental quality}{9}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Complementarity of economic activity and environmental quality}{9}{subsubsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.2}First Order Conditions}{9}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Optimal Level of Research}{10}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Maximum Profit}{10}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Government maximisation problem}{11}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Optimal pollution tax}{12}{subsection.4.6}%
