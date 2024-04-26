@@ -7,6 +7,5 @@ Hello, we are a four students of the Master of Research in Economics of Sciences
 
 Here you can find some useful resources : 
 
-- [Introduction](./Resources/Introduction/Introduction.pdf) ([Here the LaTeX code](./Resources/Introduction/Introduction.tex))
 - [Baseline model](./Resources/Baseline_model/Baseline.pdf) ([Here the LaTeX code](./Resources/Baseline_model/Baseline.tex))
 - [References file in LaTex](./Resources/References/bibliography.bib)
