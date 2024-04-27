@@ -5,7 +5,7 @@ project:
 website:
   title: "Microeconomics 2 project website"
   navbar:
-    background: '#D3D3D3'
+    background: '#e0e0e0'
     title: false
     left:
       - href: ../
