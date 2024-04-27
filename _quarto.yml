@@ -11,7 +11,7 @@ website:
       - href: ../
         text: Home
       - href: index.qmd
-        text: Microeconomics project
+        text: Our project
       - href: about.qmd
         text: About
       - icon: github
