@@ -5,15 +5,17 @@ project:
 website:
   title: "Microeconomics 2 project website"
   navbar:
+    background: '#D3D3D3'
     title: false
     left:
       - href: ../
-        text: My Github Page
+        text: Home
       - href: index.qmd
-        text: Home 
+        text: Microeconomics project
       - href: about.qmd
         text: About
-
+      - icon: github
+        href: https://github.com/Paulogcd/Micro_project
 format:
   html:
     theme: cosmo
