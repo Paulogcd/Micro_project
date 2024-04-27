@@ -5,7 +5,12 @@ project:
 website:
   title: "Microeconomics 2 project website"
   navbar:
+    title: false
     left:
+      - href: ../
+        text: My Github Page
+      - href: index.qmd
+        text: Home 
       - href: about.qmd
         text: About
 
