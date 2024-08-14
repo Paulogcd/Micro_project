@@ -7,9 +7,9 @@
 \usepackage{hyperref}
 \usepackage{graphicx} % Required for inserting images
 
-\title{DRAFT INTRO Microeconomics Project}
+\title{Baseline Model - Microeconomics Project}
 \author{Chambon Lionel \\ Gugelmo Cavalheiro Dias Paulo \\ Pavlovich Karina \\ Soufflet Morgane}
-\date{\today}
+\date{May 1, 2024}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -126,10 +126,10 @@ Where :
 \end{itemize}
 
 \subsection{Government}
-The government maximises the social welfare, which we define as a utility function that takes the  economic activities $\text{EA}{t}$ and the risk of environmental disaster $\text{EQ}{t}$ as inputs: 
+The government maximises the social welfare, which we define as a utility function that takes the  economic activities $\text{EA}_{t}$ and the risk of environmental disaster $\text{EQ}_{t}$ as inputs: 
 
 \begin{equation}
-    u_{G,t}=\text{EA}{t}^{\alpha}\cdot\text{EQ}{t}^{1-\alpha}
+    u_{G,t}=\text{EA}_{t}^{\alpha}\cdot\text{EQ}_{t}^{1-\alpha}
 \end{equation}
 Where : 
 \begin{itemize}
@@ -140,10 +140,8 @@ Where :
 This function has two main properties : 
 
 \begin{enumerate}
-    \item Positive but decreasing returns for both Economic Activity and Environmental Quality\footnotemark[1].
-    \footnotetext[1]{\hyperref[sec:properties_utility_function_gov_1]{See Appendix for proof.}}
-    \item Both Economic Activity and Environmental Quality are complementary goods, as the cross-derivative is positive\footnotemark[2].
-    \footnotetext[2]{\hyperref[sec:properties_utility_function_gov_2]{See Appendix for proof.}}
+    \item Positive but decreasing returns for both Economic Activity and Environmental Quality\footnote{\hyperref[sec:properties_utility_function_gov_1]{See Appendix for proof.}}.
+    \item Both Economic Activity and Environmental Quality are complementary goods, as the cross-derivative is positive \footnote{\hyperref[sec:properties_utility_function_gov_2]{See Appendix for proof.}}.
 \end{enumerate}
 
 \subsection{Model solution}
@@ -164,29 +162,25 @@ Expressing the $q_{t}$ as a function of $m_{t}$, and the $g_{t}$ as a function o
 \begin{equation*}
     \mathcal{L} = \frac{m_{t}}{c_{t}}\cdot\left(p_{t}-c_{t}\right)-\tau_{t}\cdot \frac{m_{t}}{c_{t}}\cdot \frac{1}{r_{t}}+\lambda\left(B-r_{t}-m_{t}\right)
 \end{equation*}
-Applying the First Order Condition\footnotemark[3] gets the manufacturing investment:
-\footnotetext[3]{\hyperref[sec:proof3]{See Appendix for proof.}}
+Applying the First Order Condition\footnote{\hyperref[sec:proof3]{See Appendix for proof.}} gets the manufacturing investment:
 
 \begin{equation}
     m_{t}=\frac{1}{\tau_{t}}\left(r_{t}^{2}(p_{t}-c_{t})-r_{t}\cdot \tau_{t}\right)=\frac{r_{t}^{2}\left(p_{t}-c_{t}\right)}{\tau_{t}}-r_{t}
 \end{equation}
 This expression gives the optimal level of manufacturing investment for the firm. Since it has a negative relationship with the pollution tax $\tau_{t}$, we can conclude that, the bigger the pollution tax, the more incentives the firm has to invest in R\&D instead of simply manufacturing goods with high pollution level. 
 
-From that, we can identify the optimal level of research $r$ for the firm\footnotemark[4] :
-\footnotetext[4]{\hyperref[sec:proof4]{See Appendix for proof.}}
+From that, we can identify the optimal level of research $r$ for the firm \footnote{\hyperref[sec:proof4]{See Appendix for proof.}} :
 \begin{equation}
     r_{t}=\sqrt{\frac{B_{t}\cdot \tau_{t}}{p_{t}-c_{t}}}
 \end{equation}
-Thus, the maximum profit of the firm is\footnotemark[5] : 
-\footnotetext[5]{\hyperref[sec:proof5]{See Appendix for proof.}}
+Thus, the maximum profit of the firm is\footnote{\hyperref[sec:proof5]{See Appendix for proof.}}: 
 \begin{equation}
-    \pi_{t}=\frac{1}{c_{t}}\cdot\left({\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sqrt{\tau_{t}}}\right)^{2}
+    \pi^{*}_{t}=\frac{1}{c_{t}}\cdot\left({\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sqrt{\tau_{t}}}\right)^{2}
 \end{equation}
-
 
 \subsection{Government problem}
 In this simplified model, we set the Economic Activity $\text{EA}_{t}$ equal to the profit of the firm.
-The environment quality $\text{EQ}{t}$ at time $t$ depends on the environmental pollution at time $t$. The expression for the $\text{EQ}{t}$ is the following: 
+The environment quality $\text{EQ}_{t}$ at time $t$ depends on the environmental pollution at time $t$. The expression for the $\text{EQ}_{t}$ is the following: 
 \begin{equation}
     EQ_{t}\equiv e^{-q_{t}\cdot g_{t}}
 \end{equation}
@@ -195,13 +189,11 @@ Thus, the maximisation program of the government is:
 \begin{equation*}
     \max_{\tau_{t}}{u_{G,t}=\pi_{t}^{\alpha}\cdot e^{-q_{t}\cdot g_{t}\cdot(1-\alpha)}}
 \end{equation*}
-Since the Stackelberg game implies perfect information, the government knows the allocation decisions of the firm. Therefore  the government knows the values of $r_{t}$ and $m_{t}$, and the maximisation program of the government is \footnotemark[6]: 
- \footnotetext[6]{\hyperref[sec:proof6]{See Appendix for proof.}}
+Since the Stackelberg game implies perfect information, the government knows the allocation decisions of the firm. Therefore  the government knows the values of $r_{t}$ and $m_{t}$, and the maximisation program of the government is \footnote{\hyperref[sec:proof6]{See Appendix for proof.}}: 
 \begin{equation}
     u_{G,t}=\frac{e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot\left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha}}{c^{\alpha}\cdot e^{\frac{1}{c_{t}}\cdot(1-\alpha)\cdot\frac{\sqrt{B_{t}(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}}}
 \end{equation}
-To maximise this utility function, we find first derivatives with respect to $\tau_{t}$ and set them equal to zero. Solving for $\tau_{t}$ gives the expression for the optimal pollution tax $\tau_{t}^{*}$ that maximises the objective function of the government \footnotemark[7] : 
-\footnotetext[7]{\hyperref[sec:proof7]{See Appendix for proof.}}
+To maximise this utility function, we find first derivatives with respect to $\tau_{t}$ and set them equal to zero. Solving for $\tau_{t}$ gives the expression for the optimal pollution tax $\tau_{t}^{*}$ that maximises the objective function of the government \footnote{\hyperref[sec:proof7]{See Appendix for proof.}} : 
 \begin{equation}
     \tau_{t}^{*}=\frac{B_{t}\left(p_{t}-c_{t}\right)(1-\alpha)\left[{\alpha \cdot 4\cdot c_{t}+1-\alpha}-\sqrt{(1-\alpha)^{2}+\alpha\cdot8\cdot c_{t}(1-\alpha)}\right]} {\alpha^{2} \cdot 8\cdot c_{t}^{2}}
 \end{equation}
@@ -215,7 +207,22 @@ We can observe that the optimal pollution tax has the following properties:
 
 \subsection{Interpretations and extensions}
 
-To extend our baseline model and make it more applicable to real life, we are going to introduce imperfect information and persistent pollution. 
+This model allows us to say several things about the strategic interactions between the firm and the government. 
+
+Regarding the maximum profit of the firm, we see that $\pi^{*}$ has a negative relationship with the tax.
+Under the condition that $B_{t}\cdot (p_{t}-c_{t})>\tau_{t}$, this conclusion seems to be realistic and in harmony with what we would expect from a rational firm. 
+
+Regarding the best response of the government : first of all, the tax depend on the preference of the government, translated by $\alpha$.
+As defined in the utility function, $u_{G,t}=\text{EA}_{t}^{\alpha}\cdot\text{EQ}_{t}^{1-\alpha}$, $\alpha$ is the relative preference of government for Economic Activity. 
+If the government suddendly has a bigger preference for economic activity, and that we have an increase of $\alpha$, then its best response would be to decrease the tax.
+
+Secondly, we see that the tradeoff between economic activity and environmental quality is determinant in the choice of the government. 
+The negative relationship between $\tau_{t}$ and $c_{t}$ and the positive relationship between $\tau_{t}$ and $B_{t}$ shows it. 
+If the firm is faced with higher production costs, it is in the interest of the government to decrease the tax, even if it implies a highger pollution level. 
+In the same sense, if the firm has suddenly a higher budget, its profit will be positively impacted, and the government can allow itself to tax it a bit more. 
+The conclusions of this model seem coherent with real considerations. 
+
+To extend our baseline model and make it more applicable to real life, we are now going to introduce imperfect information
 
 \pagebreak
 \section{Appendix}
@@ -227,16 +234,16 @@ To extend our baseline model and make it more applicable to real life, we are go
 The Government utility function is :
 
 \begin{equation*}
-    u_{G,t}=\text{EA}_{t}^{\alpha}\cdot\text{EQ}{t}^{1-\alpha}
+    u_{G,t}=\text{EA}_{t}^{\alpha}\cdot\text{EQ}_{t}^{1-\alpha}
 \end{equation*}
 
 For $\text{EA}_{t}$ the economic activity and $\text{EQ}_{t}$ the environmental quality to yields positive but diminishing returns, the first derivatives must be positive and the second derivatives must be negatives. 
 
 We compute : 
-$$\frac{\partial u_{G,t}}{\partial \text{EA}{t}}=\alpha\cdot\text{EA}{t}^{\alpha-1}\cdot\text{EQ}_{t}^{1-\alpha}>0$$
-$$\frac{\partial u_{G,t}}{\partial \text{EQ}{t}}=(1-\alpha)\cdot\text{EA}{t}^{\alpha}\cdot\text{EQ}_{t}^{-\alpha}>0$$
-$$\frac{\partial^2 u_{G,t}}{\partial^2 \text{EA}{t}}=\alpha\cdot(\alpha-1)\cdot\text{EA}{t}^{\alpha-2}\cdot\text{EQ}_{t}^{1-\alpha}<0$$
-$$\frac{\partial^2 u_{G,t}}{\partial^2 \text{EQ}{t}}=(1-\alpha)\cdot(-\alpha)\cdot\text{EA}{t}^{\alpha-1}\cdot\text{EQ}_{t}^{-\alpha-1}<0$$
+$$\frac{\partial u_{G,t}}{\partial \text{EA}_{t}}=\alpha\cdot\text{EA}_{t}^{\alpha-1}\cdot\text{EQ}_{t}^{1-\alpha}>0$$
+$$\frac{\partial u_{G,t}}{\partial \text{EQ}_{t}}=(1-\alpha)\cdot\text{EA}_{t}^{\alpha}\cdot\text{EQ}_{t}^{-\alpha}>0$$
+$$\frac{\partial^2 u_{G,t}}{\partial^2 \text{EA}_{t}}=\alpha\cdot(\alpha-1)\cdot\text{EA}_{t}^{\alpha-2}\cdot\text{EQ}_{t}^{1-\alpha}<0$$
+$$\frac{\partial^2 u_{G,t}}{\partial^2 \text{EQ}_{t}}=(1-\alpha)\cdot(-\alpha)\cdot\text{EA}_{t}^{\alpha-1}\cdot\text{EQ}_{t}^{-\alpha-1}<0$$
 
 Thus, we indeed have positive but diminishing returns for both $\text{EA}_{t}$ and $\text{EQ}_{t}$.
 
@@ -245,7 +252,7 @@ Thus, we indeed have positive but diminishing returns for both $\text{EA}_{t}$ a
 
 For $EA_{t}$ the economic activity and $EQ_{t}$ the environmental quality to be complements, the crosse-derivative has to be positive. 
 We compute :  
-$$\frac{\partial^2 u_{G,t}}{\partial \text{EA}{t} \partial \text{EQ}{t}}=\alpha\cdot(1-\alpha)\cdot\text{EA}{t}^{\alpha-1}\cdot\text{EQ}{t}^{-\alpha}>0$$
+$$\frac{\partial^2 u_{G,t}}{\partial \text{EA}_{t} \partial \text{EQ}_{t}}=\alpha\cdot(1-\alpha)\cdot\text{EA}_{t}^{\alpha-1}\cdot\text{EQ}_{t}^{-\alpha}>0$$
 
 Thus, $EA_{t}$ and $EQ_{t}$ are complement. This means that in this model, the governement does not prefer a world without economic activity or without some environmental quality, but it prefers a mixture of them. 
 
@@ -259,7 +266,7 @@ Differentiating the Lagrangian with respect to the manufacturing investment $m_{
 $$\frac{\partial \mathcal{L}}{\partial m_{t}}=0$$
 $$\Leftrightarrow\frac{p_{t}-c_{t}}{c_{t}}-\frac{\tau_{t}}{c_{t}\cdot r_{t}}-\lambda=0$$
 $$\Leftrightarrow\frac{p_{t}-c_{t}}{c_{t}}-\frac{\tau_{t}}{c_{t}\cdot r_{t}}-\frac{\tau_{t}\cdot m_{t}}{c_{t}\cdot r^{2}_{t}}=0$$
-$$\Leftrightarrow{r^{2}{t}}\cdot(p{t}-c_{t})-r_{t}\cdot \tau_{t}-\tau_{t}\cdot m_{t}=0$$
+$$\Leftrightarrow{r^{2}_{t}}\cdot(p{t}-c_{t})-r_{t}\cdot \tau_{t}-\tau_{t}\cdot m_{t}=0$$
 Hence the manufacturing investment is:
 \begin{equation}
     m_{t}=\frac{1}{\tau_{t}}\left(r_{t}^{2}(p_{t}-c_{t})-r_{t}\cdot \tau_{t}\right)=\frac{r_{t}^{2}\left(p_{t}-c_{t}\right)}{\tau_{t}}-r_{t}

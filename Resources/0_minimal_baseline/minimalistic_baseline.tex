@@ -1,0 +1,48 @@
+\documentclass{article}
+\title{Default Title}
+\author{Paulo Gugelmo Cavalheiro Dias}
+\begin{document}
+\maketitle
+
+\section{Baseline model}
+
+\subsection{Agents}
+
+In this very first model, we consider two agents : the government and the firm. 
+
+\subsection{The government}
+
+In a very minimalistic model, we can assume that the government retires utility from the environmental quality. 
+We could thus advance no functional form of the utility function of the government, and argue that its utility can take two values : a superior value in a non polluted environment, and an inferior value in a polluted environment.
+
+The strategies of the government are also limited : it can only choose if it implements a pollution tax or not.
+
+\subsection{The firm}
+
+In this baseline model, the firm only retires utility from its profit.
+It has only two possible strategies : do nothing or adapt its production technology so that it pollutes less. \\
+Changing its production process imply an investment $I$, but allows to avoid being taxed in case the government decides to implement the tax. \\
+Not changing its production process allows the firm to not invest.
+However, if the government decides to implement a pollution tax, the profit of the firm will be diminished by the tax such that : $\pi-T$.
+
+\subsection{Strategic interations}
+
+The strategic interactions between those two described agents could thus be summarized in the following table, with the firm as the player one, and government as player two. 
+
+\begin{center}
+    \begin{tabular}{ |c|c|c| } 
+     \hline
+     & Pollution tax & No pollution tax \\ 
+     Change of production process & $\left(\pi-I,\overline{u_{G}}\right)$ & $\left(\pi-I,\overline{u_{G}}\right)$  \\ 
+     No change of production process & $\left(\pi-T,\underline{u_{G}}\right)$ & $\left(\pi,\underline{u_{G}}\right)$ \\ 
+     \hline
+    \end{tabular}
+    \end{center}
+
+\subsection{Solution and discussion}
+
+In this minimalistic setup, it is strictly more profitable for the government if the firm change its production process. 
+The choice of changing or not the production process of the firm will however depend on two values : the tax $T$ and the investment $I$.
+Thus, the optimal strategy for the government is to implement a tax $T$ strictly superior to the investment of the firm to change the production process. 
+
+\end{document}

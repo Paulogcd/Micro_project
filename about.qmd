@@ -2,11 +2,12 @@
 title: "About"
 ---
 
-We are a group of four students of Sciences Po Paris, currently in our first year of Master of Research in Economics, and this Website aims to help us present in an extended way our work for our class of Microeconomics 2.
+We are a group of four students of Sciences Po Paris in the Master of Research in Economics, and this Website aims to help us present our work for the Microeconomics 2 class.
+We received a grade of 14 over 20.
 
-Feel free to reach out to us vie our academic email (first_name.family_name@sciencespo.fr) : 
+Feel free to reach out to us vie our academic email (firstname.familyname@sciencespo.fr) : 
 
 - CHAMBON Lionel
 - GUGELMO CAVALHEIRO DIAS Paulo
 - PAVLOVICH Karina
-- SOUFLET Morgane
+- SOUFFLET Morgane
