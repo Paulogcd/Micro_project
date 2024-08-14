@@ -1,0 +1,37 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {section}{\numberline {2}A Baseline Model}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}The government}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}The firm}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Strategic interactions}{5}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Solution and discussion}{5}{subsection.2.4}%
+\contentsline {section}{\numberline {3}A Stackelberg Game}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Players}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Firm}{6}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Technology of the firm}{6}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Profit of the firm}{7}{subsubsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.3}Government}{7}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Model solution}{8}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Firm's problem}{8}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Government problem}{8}{subsubsection.3.4.2}%
+\contentsline {section}{\numberline {4}Extension: Cheap Talk or Signalling?}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Motivation}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Cheap Talk}{10}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Assumptions}{10}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Available Actions and Payoffs}{11}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Solving the Game}{11}{subsubsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.3}A Simple Signalling Game}{12}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Assumptions}{12}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Available Actions and Payoffs}{13}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Solving the Game}{15}{subsubsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.4}Discussion and Further Research}{16}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Concluding Remarks}{18}{section.5}%
+\contentsline {section}{\numberline {6}Appendix}{19}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Properties of the utility function of the government}{19}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Diminishing returns of economic activity and environmental quality}{19}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}Complementarity of economic activity and environmental quality}{19}{subsubsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.2}First Order Conditions}{19}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Optimal Level of Research}{20}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Maximum Profit}{20}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Government maximisation problem}{21}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Optimal pollution tax}{22}{subsection.6.6}%
+\contentsline {section}{References}{26}{section*.8}%

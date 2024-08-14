@@ -1,0 +1,778 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{tikz}
+\usepackage{amsthm}
+\usetikzlibrary{positioning}
+\usepackage{geometry}
+\usepackage{lscape} % for landscape orientation
+\usepackage{adjustbox}
+\usepackage{float} 
+
+\title{Microeconomics II - Research Project}
+\author{Lionel Chambon\thanks{We would like  to thank Professor Emeric Henry and Juán Sebastián Ivars for their valuable suggestions and advice, as well as Meriem Smida for helpful comments.} \\ Paulo Gugelmo Cavalheiro Dias \\ Karina Pavlovich \\ Morgane Soufflet}
+\date{\today}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\newtheorem{proposition}{Proposition}
+
+\begin{document}
+\maketitle
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{./sciences_po.jpg}
+\end{figure}
+
+\begin{abstract}
+Can governments encourage firms to adopt green technologies in the fight against climate change? In the following paper, our aim is to use game theory to determine an optimal tax the environmentally discerning government should impose on a representative firm in order to ensure the firm invests in research and development and upgrades its production technology to thus minimise the pollution per unit of product produced. \\
+
+This research paper is organized as follows: After a brief introduction, we start by building a classic Stackelberg game between a representative firm and a representative government to find the optimal tax. Next, we  proceed to building a cheap talk game with imperfect information under the assumption that the government relies on information by the firm to set its optimal tax. We find that such a game is unsuitable to model a strategic interaction in this setting and then proceed by proposing a signalling game to capture uncertainty around the true greenness of a firm, and under what conditions firms might prefer to under- or overstate their emissions depending on how the government incentivizes firms to communicate truthfully.
+\end{abstract}
+
+\pagebreak
+\tableofcontents
+\pagebreak
+
+\section{Introduction}
+
+As carbon emissions have reached a tipping point in recent years, environmental protection has become a major preoccupation of every government. Various researchers and policymakers have tried to find ways to reconcile the need for environmental protection and economic growth. While various policies have been investigated in the existing economic literature, we would like to focus on a carbon tax and the impact the firms' degree of compliance has on it.\\
+
+In this paper, we apply a game theoretical framework to model an efficient taxation policy the government could implement with respect to the degree of importance it grants the economic activity and the environment. We will then extend this model to take into account a strategic incentive for a firm to falsely declare the pollution per unit of good produced. Thus, we aim to shed light on how firms would interact with governments, given the governments' preferences for environmental protection and its beliefs of firm credibility. \\
+
+Game theory provides a beneficial framework for contemporary researchers to analyse strategic interactions between the economic agents and to effectively trace the consequences of their decisions on each other and can be used to asses their impact on the environment. \\
+
+The general consensus is that the emissions tax is one of the most effective policies the government can impose to increase the environmental quality, the optimal amount of the tax being determined by the marginal environmental damage of the production firm's market share (Dorothée Brécard, 2010). In case of highly polluting enterprises, Wei Yu, Ruizhu Han (2019) show that particularly heavy taxation should be implemented. \\
+
+Yenipazarli (2019) further examines the effectiveness of the emissions tax within a duopolistic competition framework, taking into account heterogeneous consumer preferences for greener goods.\\ 
+
+Drake \textit{et al.} (2018) introduce asymmetric regulations across different markets in their models to analyze the presence of so-called carbon leakages, which occur when firms relocate to markets with less strict emissions regulations instead of adapting production in their domestic market.\\
+
+Studies demonstrate that the transition to green production can be challenging for firms, since it requires a major capital investment in R\&D, making final goods more costly for the consumer. Hence the firms’ decision to opt for green technologies largely depends on consumers’ willingness to increase their expenses. (Conrad, 2005, Krass 2013) \\ 
+
+The government subsidies may stimulate the firms to switch to greener production and increase the market share of green products, making the green goods cheaper to produce which would result in a substantial decrease in the environmental pollution.\\
+
+That being said, Ling \textit{et al.} (2022) demonstrate that higher subsidies might not result in a successful decrease in environmental pollution, as the effectiveness of the subsidy and the amount of the subsidy largely depend on the manufacturing investment, R\&D investment, and consumers' preferences. \\
+
+As demonstrated so far, there is substantial body of academic research that aims to investigate how to reduce environmental pollution by focusing on unsustainable production. Based on our research, we believe that they are two factors that require further analysis. \\
+
+First, it is unlikely that the government can accurately monitor the emissions on a firm-level, thus it might be difficult to differentiate the individual-firm's emissions from aggregate levels. As a consequence, the governments might find themselves making policy decisions based on the biased or low-quality data shared with them by the firms. Several instances in the past show that especially large and influential firms might take advantage to falsely declare the true pollution levels of their products. For example, in what would be known as “Dieselgate” 2015, several German car manufacturers installed secret software that was able to detect when cars were being tested for emission levels, thereby driving them artificially low, well beyond realistic pollution levels their vehicles could achieve on the road (see for instance Süddeutsche Zeitung, 2016). \\
+
+Second, many papers assume that an optimal level of R\&D investment \textit{perfectly} offsets or reduces production emissions. However, it is also possible that efforts to adapt production technologies might fail or do not reduce emissions. In that case, firms might achieve a sub-optimal outcome as they are forced to absorb the sunk R\&D costs and might be subject to higher environmental taxes.\\
+
+In this paper, we analyse the effects of informational asymmetries and frictions on the optimal government actions based on the classic Stackelberg game framework and a signalling game between the firm and the government. 
+\pagebreak
+\section{A Baseline Model}
+
+In the baseline model, we consider two agents: the firm and the government.
+
+\subsection{The government}
+
+We assume that the government draws utility from the environmental quality. 
+Thus, we do not specify a functional form of the government's utility function, we assume instead that its utility can take two values: a superior value in a non-polluted environment $\overline{u_{G}}$, and an inferior value in a polluted environment $\underline{u_{G}}$.
+
+The strategies of the government are as follows: it chooses whether to implement a pollution tax or not.
+
+\subsection{The firm}
+
+We assume that the firm only draws utility from its profit.
+It has two strategies: to keep its original production process or to adapt its production technology so that it pollutes less. \\
+Changing the production process implies an investment $I$, but allows to avoid being taxed if the government decides to implement it. \\
+Not changing the production process allows the firm not to invest.
+However, if the government decides to implement a pollution tax, the profit of the firm will be diminished by the tax and its total profit would be : $\pi-T$.
+
+\subsection{Strategic interactions}
+
+The strategic interactions between these two agents are summarised in the following table, with the firm being player one, and government being player two. 
+
+\begin{center}
+    \begin{tabular}{ |c|c|c| } 
+     \hline
+     &Pollution tax & No pollution tax \\ 
+     Change of production process & $\left(\pi-I,\overline{u_{G}}\right)$ & $\left(\pi-I,\overline{u_{G}}\right)$  \\ 
+     No change of production process & $\left(\pi-T,\underline{u_{G}}\right)$ & $\left(\pi,\underline{u_{G}}\right)$ \\ 
+     \hline
+    \end{tabular}
+    \end{center}
+
+\subsection{Solution and discussion}
+
+In this setup, it is strictly more profitable for the government if the firm changes its production process. 
+
+Whether or not to change the firm's production process, in turn, depends on two values: the tax $T$ and the investment $I$.
+Thus, the optimal strategy for the government is to implement a tax $T$ strictly superior to the investment the firm requires to change the production process. 
+
+However, as this model does not take into account the arbitrage between the economic activity and the environmental quality, it could be further developed by introducing more advanced utility functions for both the firm and the government.
+
+\pagebreak
+\section{A Stackelberg Game}
+
+We now model the economy using the following assumptions: 
+\begin{itemize}
+    \item There exist two agents in the economy, namely the government and the producer (the firm), consumers are not included.
+    \item The firms are homogeneous and therefore representable. 
+\end{itemize} 
+
+First, we model the interactions between the government and the firm using the Stackelberg game structure (a game with strategic interactions that implies perfect information, non-simultaneous actions and two players, namely the leader and the follower). 
+
+\subsection{Players}
+We assign the role of the leader to the firm and the role of a follower to the government. The firm  “plays” first, by maximising its profit. The government observes the action of the firm and then makes a move by setting an optimal tax depending on the firm's profit. \\
+
+\subsection{Firm}
+
+\subsubsection{Technology of the firm}
+
+The firm is a monopoly that produces a single good. It's production function takes two inputs: 
+
+\begin{itemize}
+    \item R\&D investment ($r$)
+    \item manufacturing investment ($m$) 
+\end{itemize}
+
+The main goal of the R\&D investment is to diminish the pollution produced by the firm per unit of product produced, while the manufacturing investment is used by the firm to produce a quantity $q$ of its' single good. \\
+
+The pollution $g_{t}$ generated by producing one unit of good at time $t$ is defined as:
+
+\begin{equation}
+g_{t}=\frac{1}{r_{t}} \\
+\end{equation}
+
+Where $r_{t}$ is the R\&D investment done by the firm to reduce its unit pollution level $g_{t}$. \\
+
+The manufacturing investment $m_{t}$ needed to produce a quantity $q_{t}$ of a good is defined as: 
+
+\begin{equation}
+m_{t} = q_{t}\cdot c_{t}\\
+\end{equation}
+
+Where $q_{t}$ is the quantity of good produced by the firm at time $t$ and $c_{t}$ is the cost of manufacturing one good by the firm at time $t$.\\
+
+Lastly, the firm is subject to a tax $\tau$ based on the pollution level emitted per unit produced. \\
+
+\subsubsection{Profit of the firm}
+Given those technology constraints, the firm maximises its profit: 
+
+\begin{equation}
+    \begin{split}
+        &\max_{r_{t},m_{t}}{\pi_{F,t}=q_{t}\cdot\left(p_{t}-c_{t}\right)-\tau_{t}\cdot q_{t}\cdot g_{t}} \\
+        &\text{subject to : } B_{t} \leq r_{t} + m_{t}
+    \end{split}
+\end{equation}
+Where : 
+\begin{itemize}
+    \item $q_{t}$ is the quantity of good produced and sold at time $t$
+    \item $p_{t}$ is the price at which one unit of good is sold
+    \item $c_{t}$ is the cost of production of a unit of good
+    \item $\tau_{t}\in\mathbb{R}_{+}$ is the amount at which one unit of good is taxed, depending on the level of pollution produced per unit, at time $t$
+    \item $g_{t}\in\mathbb{R}_{+}$ is the level of pollution emitted by producing a unit of product at time $t$
+    \item $B_{t}$ is the budget of the firm at time $t$
+\end{itemize}
+
+\subsection{Government}
+The government maximises the social welfare, which we define as a utility function that takes the  economic activities $\text{EA}{t}$ and the risk of environmental disaster $\text{EQ}{t}$ as inputs: 
+
+\begin{equation}
+    u_{G,t}=\text{EA}_{t}^{\alpha}\cdot\text{EQ}_{t}^{1-\alpha}
+\end{equation}
+Where : 
+\begin{itemize}
+    \item $\text{EA}_{t}$ is the Economic Activity of society at time $t$
+    \item $\text{EQ}_{t}$ is the Environmental Quality of the world at time $t$
+    \item $\alpha \in \left(0,1\right)$ is the relative importance of Economic Activity compared to the Environmental Quality of the World.
+\end{itemize}
+This function has two main properties : 
+
+\begin{enumerate}
+    \item Positive but decreasing returns for both Economic Activity and Environmental Quality\footnotemark[1].
+    \footnotetext[1]{\hyperref[sec:properties_utility_function_gov_1]{See Appendix for proof.}}
+    \item Both Economic Activity and Environmental Quality are complementary goods, as the cross-derivative is positive\footnotemark[2].
+    \footnotetext[2]{\hyperref[sec:properties_utility_function_gov_2]{See Appendix for proof.}}
+\end{enumerate}
+
+\subsection{Model solution}
+
+\subsubsection{Firm's problem}
+In this model, we first solve the Firm's problem for one period (our previous maximisation problem (3)) : 
+\begin{equation*}
+    \begin{split}
+    & \max_{r_{t},m_{t}}{\pi_{F,t}=q_{t}\cdot\left(p_{t}-c_{t}\right)-\tau_{t}\cdot q_{t}\cdot g_{t}} \\ 
+    & \text{subject to : } B_{t} \leq r_{t} + m_{t}
+    \end{split}
+\end{equation*}
+Hence the Lagrangian is: 
+\begin{equation*}
+    \mathcal{L} = q_{t}\cdot\left(p_{t}-c_{t}\right)-\tau_{t}\cdot q_{t}\cdot g_{t}+\lambda\left(B-r_{t}-m_{t}\right)
+\end{equation*}
+Expressing the $q_{t}$ as a function of $m_{t}$, and the $g_{t}$ as a function of $r_{t}$ gives: 
+\begin{equation*}
+    \mathcal{L} = \frac{m_{t}}{c_{t}}\cdot\left(p_{t}-c_{t}\right)-\tau_{t}\cdot \frac{m_{t}}{c_{t}}\cdot \frac{1}{r_{t}}+\lambda\left(B-r_{t}-m_{t}\right)
+\end{equation*}
+Applying the First Order Condition\footnotemark[3] yields the manufacturing investment:
+\footnotetext[3]{\hyperref[sec:proof3]{See Appendix for proof.}}
+
+\begin{equation}
+    m_{t}=\frac{1}{\tau_{t}}\left(r_{t}^{2}(p_{t}-c_{t})-r_{t}\cdot \tau_{t}\right)=\frac{r_{t}^{2}\left(p_{t}-c_{t}\right)}{\tau_{t}}-r_{t}
+\end{equation}
+This expression gives the optimal level of manufacturing investment for the firm. Since it has a negative relationship with the pollution tax $\tau_{t}$, we can conclude that, the bigger the pollution tax, the more incentives the firm has to invest in R\&D instead of simply manufacturing goods with high pollution level. 
+
+From that, we can identify the optimal level of research $r$ for the firm\footnotemark[4] :
+\footnotetext[4]{\hyperref[sec:proof4]{See Appendix for proof.}}
+\begin{equation}
+    r_{t}=\sqrt{\frac{B_{t}\cdot \tau_{t}}{p_{t}-c_{t}}}
+\end{equation}
+Thus, the maximum profit of the firm is\footnotemark[5] : 
+\footnotetext[5]{\hyperref[sec:proof5]{See Appendix for proof.}}
+\begin{equation}
+    \pi_{t}=\frac{1}{c_{t}}\cdot\left({\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sqrt{\tau_{t}}}\right)^{2}
+\end{equation}
+
+
+\subsubsection{Government problem}
+In this model, we set the Economic Activity $\text{EA}_{t}$ equal to the profit of the firm.
+The environment quality $\text{EQ}_{t}$ at time $t$ depends on the environmental pollution at time $t$. The expression for the $\text{EQ}_{t}$ is the following: 
+\begin{equation}
+    EQ_{t}\equiv e^{-q_{t}\cdot g_{t}}
+\end{equation}
+Where $q_{t}\cdot g_{t}$ is the amount of pollution produced at time $t$ \\
+Thus, the maximisation program of the government is: 
+\begin{equation*}
+    \max_{\tau_{t}}{u_{G,t}=\pi_{t}^{\alpha}\cdot e^{-q_{t}\cdot g_{t}\cdot(1-\alpha)}}
+\end{equation*}
+Since the Stackelberg game implies perfect information, the government knows the allocation decisions of the firm. Therefore  the government knows the values of $r_{t}$ and $m_{t}$, and the maximisation program of the government is \footnotemark[6]: 
+ \footnotetext[6]{\hyperref[sec:proof6]{See Appendix for proof.}}
+\begin{equation}
+    u_{G,t}=\frac{e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot\left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha}}{c^{\alpha}\cdot e^{\frac{1}{c_{t}}\cdot(1-\alpha)\cdot\frac{\sqrt{B_{t}(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}}}
+\end{equation}
+To maximise this utility function, we find first derivatives with respect to $\tau_{t}$ and set them equal to zero. Solving for $\tau_{t}$ gives the expression for the optimal pollution tax $\tau_{t}^{*}$ that maximises the objective function of the government \footnotemark[7] : 
+\footnotetext[7]{\hyperref[sec:proof7]{See Appendix for proof.}}
+\begin{equation}
+    \tau_{t}^{*}=\frac{B_{t}\left(p_{t}-c_{t}\right)(1-\alpha)\left[{\alpha \cdot 4\cdot c_{t}+1-\alpha}-\sqrt{(1-\alpha)^{2}+\alpha\cdot8\cdot c_{t}(1-\alpha)}\right]} {\alpha^{2} \cdot 8\cdot c_{t}^{2}}
+\end{equation}
+We can observe that the optimal pollution tax has the following properties: 
+\begin{itemize}
+    \item It has a negative relationship with the manufacturing cost $c_{t}$
+    \item It has a negative relationship with the preference of the government for economic activity $\alpha$
+    \item It has a positive relationship with the budget of the firm cost $B_{t}$
+    \item It has a positive relationship with the selling price $p_{t}$
+\end{itemize}
+\pagebreak
+\section{Extension: Cheap Talk or Signalling?}
+\subsection{Motivation}
+So far, we have shown that under frictionless and perfect information conditions in a Stackelberg framework, there exists a government-chosen, optimal tax level that enforces a level of R\&D spending which maximizes both firm profits and social welfare, as defined by the government's utility function, by taking into account pollution and environmental risks.
+However, in practise, several issues may need to be considered. A government is unlikely to be able to observe the true R\&D or pollution behaviour by each firm in the economy in real time.
+Firms could face uncertainty about the success of their investment, or have an incentive to be dishonest about their true “greening” efforts to deceive the government into obtaining a lower pollution tax.
+
+First, we propose a simple “cheap talk” game between the government and the representative firm following Crawford and Sobel (1982), in which the government adjusts the pollution tax based on a message sent by the firm. We will argue that costless messaging will lead to firms persistently underreporting pollution. Thus, we introduce costs to the messages sent to build a signalling game in which there is a cost of lying, to understand how this can affect equilibrium behavior. 
+
+The following section will set up the two games, present solutions, identify equilibrium conditions and discuss results.
+
+\subsection{Cheap Talk}
+
+\subsubsection{Assumptions}
+
+As before, the players are given by a welfare-maximizing government and a profit-maximizing firm. 
+
+\begin{itemize}
+    \item The economy is initially in equilibrium at time $t$.
+    \item \textit{Nature} draws a technology shock $\epsilon$ uniformly from $U \sim [0,2]$ between time $t$ and $t+1$. Thus, positive and negative technology shocks are equally likely. Pollution at any time $t$ is now given by:
+    \begin{equation}
+        g_t = \frac{\epsilon}{r_t}
+    \end{equation}
+    \item The Government knows the distribution of the technology shock and the lowest and highest possible level of emissions a firm can declare. However, it does not know the true level of pollution in the economy, an assumption we will refine later. 
+    \item Only the firm observes the nature of its technology shock and its subsequent level of emissions. The firm always invests according to the equilibrium condition found earlier.
+    \item The government wishes to adapt the pollution tax in period $t+1$ to the realization of $\epsilon$, from which it infers information about the level of pollution in the economy. However, it relies on a message my the firm to do so. 
+    \item While this may seem unreasonable in our one-firm setting, we argue that in an economy with many firms, the government is likely to observe aggregate emissions, but not individual pollution level by each firm, which explains why the government relies on the firm to supply some information.
+\end{itemize} 
+
+\subsubsection{Available Actions and Payoffs}
+
+\begin{itemize}
+\item The firm sends a message about the nature of a technology shock $\epsilon \sim [0,2]$ in $t+1$. 
+    Its payoff function is:
+    \begin{equation}
+    U_F = - (a - \epsilon + \delta)^2
+    \end{equation}
+where 
+\begin{itemize}
+    \item $a \in A$ is the action taken by the government afterwards to calculate the next tax $\tau$ that will take affect starting period $t+1$. That is, it chooses to believe a level of $\epsilon$ based on the message sent by the firm.  
+    \item $\delta \in [0, \epsilon]$ represents a variable that captures misreporting bias by the firm regarding its true $\epsilon$ that a firm might choose to convince the government to choose a lower tax level in the next period.
+\end{itemize}
+\item Based on its beliefs about the credibility of the firm, the government chooses $a$ when deciding the new optimal tax, where government utility is given by:
+
+\begin{equation}
+    U_G = - (a - \epsilon)^2
+\end{equation}
+
+\item Optimal choices for the firm and the government, respectively, are:
+    \begin{equation*}
+        a_F = \epsilon - \delta
+    \end{equation*} 
+    \begin{equation*}
+        a_G = \epsilon
+    \end{equation*}
+\end{itemize}
+In this setup, the government wishes to perfectly anticipate the firm's true value of $\epsilon$, while the firm wishes to deviate and underreport it by a factor of $\delta$.
+
+\subsubsection{Solving the Game}
+
+\begin{proposition}
+    There exists a Perfect Bayesian Equilibrium in the form of a “babbling” equilibrium (Crawford and Sobel, 2023) in which the firm chooses a message regardless of the value of $\epsilon$. Then, the firm's best repose is to set 
+    \begin{equation*}
+        a(m) = \mathbb{E}[\epsilon] = 1
+    \end{equation*}
+    which leads to the equilibrium derived earlier. \\
+\end{proposition} 
+
+This case on its own, however, is not particularly interesting. Therefore, we will seek to derive a two-message equilibrium to identify a "threshold of underreporting" given by $\delta$. Suppose thus that the firm can choose a message such that $a(m_1) < a(m_2)$. That is, suppose the firm faces a level of $\epsilon$ and must now decide \textit{by how much} to underreport it, such that $\epsilon > m_2 > m_1$.
+
+Plugging in the two messages into the firm's utility function yields the marginal benefit from choosing $a(m_2)$ over $a(m_1)$:
+\begin{equation}
+    \Delta(\epsilon) = - (a(m_2) - \epsilon - \delta)^2 + (a(m_1) - \epsilon - \delta)^2
+\end{equation}
+This is increasing in $\epsilon$.
+
+\begin{proposition}
+    There exists an $\epsilon^*$ such that the firm chooses $m_1$ if $\epsilon \in [0, \epsilon^*)$ and $m_2$ if $\epsilon \in (\epsilon^*, 2]$. Then, knowing the distribution of $\epsilon$ and by Bayes' rule,
+    \begin{equation*}
+        a(m_1) = \frac{\epsilon^*}{2}
+    \end{equation*}
+    \begin{equation*}
+        a(m_2) = \frac{2 + \epsilon^*}{2}
+    \end{equation*}
+\end{proposition}
+\vspace{5mm}
+These conditions now enable us to solve for $\epsilon^*$ by plugging both expressions into the utility functions.
+
+$$\epsilon^* - \delta - \frac{\epsilon^*}{2} = \frac{2 + \epsilon^*}{2} - \epsilon^* + \delta$$
+$$\Leftrightarrow\frac{2\epsilon^* - 2}{2} = 2\delta $$
+\begin{equation}
+    \epsilon^* = 2\delta + 1
+\end{equation}
+
+for $\delta \in [- \frac{1}{2}, \frac{1}{2}]$ since $\epsilon \in [0,2]$. \\
+
+In our setting, we have identified boundaries for our underreporting parameter $\delta$. Intuitively, only the case in which $\delta > 0$ is interesting, as firms face no costs of lying and would thus never overstate their pollution levels. However, this result is unsatisfactory as it fails to capture an essential tradeoff both players face. Practically, firms are unlikely to persistently underreport as this would reduce its credibility with the government, as the government might be able to recover the true $\epsilon$ if it knows the R\&D investment undertaken by the firm, which we have assumed to be true in our baseline model. Second, while in our baseline framework, the government should increase taxes if pollution levels rise, this could be detrimental to investment. If a firm invests into green technology but faces an unfortunate realization of $\epsilon$, it might be discouraged from investing or staying in business if it faces an increase in taxes despite its efforts. This would also be sub-optimal for the government, which also considers firm profits in its Cobb-Douglas utility function.
+
+\subsection{A Simple Signalling Game}
+
+Compared to the previous setting, we wish to capture two additional elements. How does a cost of lying affect a firm's decision about communicating truthfully with the government? Also, we want to build payoffs such that the firm has an incentive to communicate truthfully. An economic argument is that if a firm admits that it failed to reduce pollution, the government could choose to raise the pollution tax by less than what is predicted in  our baseline model to encourage future investment by the unsuccessful  firm. 
+
+\subsubsection{Assumptions}
+
+\begin{itemize}
+    \item In the following we assume that the true level of pollution \textit{and} amount of R\&D investment undertaken by the firm are not known to the government.
+    \item The government relies on the firm to declare a pollution level at time $t+1$ to adjust its new tax accordingly, which will be in effect by the end of $t+1$.
+    \item Firms now face a cost of lying $L$, which could be imagined as a cost spent on lobbying to convince the government the firm is telling the truth even if it is not. This cost is private to the firm.
+\end{itemize}
+
+\subsubsection{Available Actions and Payoffs}
+
+\begin{itemize}
+    \item The government can choose to increase ($\overline{\tau}$) or  decrease ($\underline{\tau}$) the pollution tax after receiving the message.
+    \item $Nature$ draws types $T \in [t_1, t_2]$ with probabilities $p$ and $1-p$ where the types are $t_1\{Honest\}$ and $t_2\{Liar\}$.
+    \item Both types of firms can declare a pollution level $g^{H}$ or $g^{L}$ but incurs a cost if it is lying. Uncertainty around the level of pollution is captured by our random shock variable $\epsilon$.
+    \item The government receives a positive utility from raising the tax when the firm is lying. The set of beliefs of the government is $(\mu, \beta)$.
+    \item For readability and illustration purposes, we choose payoffs $\in \mathbb{N}$ to find equilibria. The game is illustrated by the following game tree:
+\end{itemize}
+\pagebreak
+\usetikzlibrary{positioning}
+
+
+\begin{centering}
+ 
+\begin{tikzpicture}[node distance=3cm, scale=0.5]
+
+% Nature node
+\node[circle, draw] (nature) at (0,0) {N};
+
+% Firm nodes
+\node[above=of nature] (firmUp) {Honest};
+\node[below=of nature] (firmDown) {Liar};
+
+% Government nodes
+\node[left=3cm of firmUp] (governmentLeft) {Government ($\mu$)};
+\node[right=3cm of firmUp] (governmentRight) {($\beta$) Government};
+\node[left=3cm of firmDown] (governmentLeft2) {Government ($1 - \mu$)};
+\node[right=3cm of firmDown] (governmentRight2) {(1 - $\beta$) Government};
+
+% Connect nodes
+\draw (nature) -- node[left]{\textit{p}} (firmUp);
+\draw (nature) -- node[left]{\textit{1-p}} (firmDown);
+\draw (firmUp) -- node[above]{$g^H$} (governmentLeft);
+\draw (firmUp) -- node[above]{$g^L$} (governmentRight);
+\draw (firmDown) -- node[below]{$g^H$} (governmentLeft2);
+\draw (firmDown) -- node[below]{$g^L$} (governmentRight2);
+
+% Forks and actions for Government
+\draw (governmentLeft) -- ++(-45:-3cm) node[left]{(1; 0) $\tau = \overline{\tau}$};
+\draw (governmentLeft) -- ++(45:-3cm) node[left]{(-1; 1) $\tau = \underline{\tau}$};
+\draw (governmentRight) -- ++(45:3cm) node[right] {$\tau = \overline{\tau}$ (-2; -2)};
+\draw (governmentRight) -- ++(-45:3cm) node[right] {$\tau = \underline{\tau}$ (3; 3)};
+\draw (governmentLeft2) -- ++(-45:-3cm) node[left] {(1; \textit{-L}) $\tau = \overline{\tau}$};
+\draw (governmentLeft2) -- ++(45:-3cm) node[left] {(-2; 1\textit{-L}) $\tau = \underline{\tau}$};
+\draw (governmentRight2) -- ++(45:3cm) node[right] {$\tau = \overline{\tau}$ (2; -2\textit{-L})};
+\draw (governmentRight2) -- ++(-45:3cm) node[right] {$\tau = \underline{\tau}$ (-2; 3\textit{-L})};
+
+\end{tikzpicture} \\
+
+\vspace{2cm}
+\textbf{Figure 1:} A Signalling Game Between the Government and the Firm
+
+\end{centering}
+\pagebreak
+
+\subsubsection{Solving the Game}
+
+In this specification, our aim is to show  only some of many possible equilibria that can arise if the payoffs abstracted from the utility functions change. For instance, the weighting factor $\alpha$ determines the relative importance of profit to environmental quality set by the government. Depending on this $\alpha$, a government might be more or less willing to accommodate firms who fail to reduce emissions despite their positive investment. We believe that our result serves as a useful example to understand the tradeoff a government faces between punishing dishonest firms but rewarding honest ones, even if they might fail in reducing emissions between two periods of time $t$ and $t+1$.
+
+\begin{proposition}
+    There exists no separating equilibrium in which $m(t_1 = Honest) = \{g^H\}$ and $m(t_2 = Liar) = \{g^L\}$.
+\end{proposition}
+
+\begin{proof}
+    Suppose $m(t_1) = \{g^H\}$ and $m(t_2) = \{g^L\}$. Then, $\mu =1$ and $\beta = 0$. It follows that:
+    \begin{align*}
+        U_G(\overline{\tau} | g^H) = 1 > U_G(\underline{\tau} | g^H) = -1 \\
+        U_G(\overline{\tau} | g^L) = 1 > U_G(\underline{\tau} | g^L) = -2
+    \end{align*}
+
+    The government's best response is thus $\{(g^H, g^L), (\overline{\tau}, \overline{\tau})\}$. 
+    Then, a firm of type $t_2$ has an incentive to deviate by playing \{$g^H$\} to obtain a payoff of $-L > -2-L$.
+\end{proof}
+\vspace{0.5cm}
+
+It follows similarly that: \\
+
+\begin{proposition}
+    There exists no separating equilibrium in which $m(t_1 = Honest) = \{g^L\}$ and $m(t_2 = Liar) = \{g^H\}$.
+\end{proposition}
+
+\begin{proof}
+    Suppose $m(t_1) = \{g^L\}$ and $m(t_2) = \{g^H\}$. Then, $\mu =0$ and $\beta = 1$. It follows that:
+    \begin{align*}
+        U_G(\underline{\tau} | g^L) = 3 > U_G(\overline{\tau} | g^L) = -2 \\
+        U_G(\overline{\tau} | g^H) = 1 > U_G(\underline{\tau} | g^H) = -2
+    \end{align*}
+
+    The government's best response is thus $\{(g^H, g^L), (\overline{\tau}, \underline{\tau})\}$. 
+    Then, a firm of type $t_2$ has an incentive to deviate by playing \{$g^L$\} to obtain a payoff of $3-L > -L$.
+\end{proof}
+\vspace{0.5cm}
+
+This result is quite intuitive. It it sub-optimal for a firm to reveal its type, as it could try to trick or “bluff” the government into adjusting the tax more favorably for firm profits. We will now check for pooling equilibria. \\
+
+\begin{proposition}
+    There exists a pooling equilibrium in which both types pool on $m(t_1, t_2) = \{g^L\}$.
+\end{proposition}
+
+\begin{proof}
+    Suppose such an equilibrium exists. Then:
+    \begin{align*}
+        U_G(\overline{\tau}) = -2\beta+2(1-\beta) \\
+        U_G(\underline{\tau}) = 3\beta-2(1-\beta) \\
+        U_G(\overline{\tau}) = U_G(\underline{\tau}) \xrightarrow[]{} \beta = \frac{4}{9}
+    \end{align*}
+
+    The government's best response is thus $(\overline{\tau})$ if $\beta > \frac{4}{9}$. 
+    Then, a firm has an incentive to deviate by playing \{$g^H$\} to obtain a payoff of $1 > -2$ or $-1 > -2$. 
+    If $\beta < \frac{4}{9}$, the government plays $\underline{\tau}$. Then, the firm has no incentive to deviate as all deviation payoffs are  $< 3 - L$, regardless of any off-path beliefs $\mu$. \\
+    
+Thus, there exists a PBNE $\{g^L, g^L, \underline{\tau}, \underline{\tau}, \beta < \frac{4}{9}, \mu\}$.
+\end{proof} 
+\vspace{0.5cm}
+
+It follows similarly that: 
+
+\begin{proposition}
+    There exists a pooling equilibrium in which $m(t_1, t_2 = g^H)$.
+\end{proposition}
+
+\begin{proof}
+    Suppose such an equilibrium exists. Then:
+    \begin{align*}
+        U_G(\overline{\tau}) = 1 \\
+        U_G(\underline{\tau}) = -\mu -2(1-\mu) \\
+        U_G(\overline{\tau}) = U_G(\underline{\tau}) \xrightarrow[]{} \mu < 3
+    \end{align*}
+
+    The government's best response is thus always to play $\overline{\tau}$. For the firm, declaring $g^H$ is only an equilibrium if the firm's off-path belief $\beta$ is such that the  government always plays $\overline{\tau}$ if it observes $m = g^L$. This is the case for:
+    \begin{align*}
+       U_G(\overline{\tau}) > U_G(\underline{\tau}) \\
+       -2\beta + 2(1-\beta) > 3\beta -2(1-\beta) \\
+       \beta < \frac{4}{9}
+    \end{align*}
+
+    Thus, there exists a PBNE $\{g^H, g^H, \overline{\tau}, \overline{\tau}, \beta < \frac{4}{9}, \mu\}$.
+\end{proof}
+\vspace{0.5cm}
+
+\subsection{Discussion and Further Research}
+
+What do these results tell us? A firm's action will always depend on its belief on how the government will react to its message.  If a government is very accommodating, a firm might be inclined to understate its level of pollution, while it may do the opposite if it believes that the government does not trust it. This intuition can be extended to model more general policy problems in which governments rely on information supplied by firms to address climate change and the green transition. Firm beliefs about government behaviour could, for instance, reflect expectations about results in an upcoming election, if one candidate places a higher weight on environmental quality than another. Payoffs are thus linked to a government's relative preference between profits and environmental quality, given by $\alpha$. Additionally, we modelled environmental quality as an exponential function of pollution to reflect the accelerating effects of climate change. Such affects would likely also alter the payoff in such a game, and hence how much trust the government will decide to put into  the firm. This also encapsulates broader political discussions about how climate change should be addressed, whether by trusting into the creative forces of firms or by a stronger government setting appropriate incentives to change behaviour. In general, we argue that a signalling game that includes a cost of lying is more suitable to represent these  tradeoffs that a cheap talk game.\\
+
+Further research could examine the effects of political uncertainty on firm investment decisions. A recent working paper published by the European Investment Bank finds that uncertainty has a significant negative effect on investment, which is measured using detailed EU survey data (Kolev and Randall, 2024). Such surveys could also be designed to focus specifically on green investments and how they are linked to election cycles. Moreover, with green subsidy schemes and investment incentives increasing especially in European countries and in the US, further research could investigate whether an optimal  level of green subsidy exists, that is, high enough to encourage firms to lower emissions, but not too high to as to incentivize firms to invest sub-optimally to continue receiving said subsidy. Firm action will also vary with the cost of lying $L$. Suppose that as emissions rise and public awareness for environmental protection increases, firms will also face an increasing lobbying cost to convince not only governments, but also consumers, about the honestly of their efforts. Ling \textit{et al.} show how introduce differentiated consumer preferences for green products and incorporate firms' predicted market share between more and lesser green products into their equilibrium. Finally, investigating the effects of lobbying on green decisions will become more important as the stakes, especially for high-polluting companies, will continue to increase. Chiroleau-Assouline and Lyon (2020) study how lobbying efforts could delay or weaken the legislative process if lobbies engage in efforts to undermine the credibility of actors in favor of political action that is against the interest of the firm.
+
+\pagebreak
+
+\section{Concluding Remarks}
+We have shown that under frictionless and perfect information conditions in a Stackelberg framework, there exists a government-chosen, optimal tax level that enforces a level of R\&D spending which maximizes both firm profits and social welfare, by taking into account pollution and environmental risks. \\
+
+However, under imperfect information, the government might not be able to asses the firms' carbon emission and might rely on their willingness to share their true level of emissions. We have shown through a cheap talk game that if the message sent by the firm is costless, then the firms have no incentive in stating the truth. \\
+
+We therefore introduced a cost in a signalling game. Here, we show that the existence of equilibria depends on relative payoffs and beliefs of the government about the type of the firm. If the government attributes more importance to the profits compared to the environment, they might be more willing to accommodate firms that failed their R\&D and set a lower tax. Depending on the expected government actions, the firms would change their message.\\
+
+This model could be reproduced by using different payoffs based on different preferences of the government between economic activity and environmental quality. \\
+
+Overall, we aimed to capture the trade-offs governments and firms face. Governments must react firmly to the environmental urgency, but without punishing firms that try to adapt if they fail to lower their emissions as fast as would be expected by the government. On the other hand, governments want to be firm enough to discourage firms from deliberately under-performing. Finding the right balance will be crucial for policymakers to successfully fight climate change and support the green transition.
+
+\pagebreak
+\section{Appendix}
+
+\subsection{Properties of the utility function of the government}
+
+\subsubsection{Diminishing returns of economic activity and environmental quality}
+\label{sec:properties_utility_function_gov_1}
+The Government utility function is :
+
+\begin{equation}\tag{4}
+    u_{G,t}=\text{EA}_{t}^{\alpha}\cdot\text{EQ}{t}^{1-\alpha}
+\end{equation}
+
+For $\text{EA}_{t}$ the economic activity and $\text{EQ}_{t}$ the environmental quality to yields positive but diminishing returns, the first derivatives must be positive and the second derivatives must be negatives. 
+
+We compute : 
+$$\frac{\partial u_{G,t}}{\partial \text{EA}_{t}}=\alpha\cdot\text{EA}_{t}^{\alpha-1}\cdot\text{EQ}_{t}^{1-\alpha}>0$$
+$$\frac{\partial u_{G,t}}{\partial \text{EQ}_{t}}=(1-\alpha)\cdot\text{EA}_{t}^{\alpha}\cdot\text{EQ}_{t}^{-\alpha}>0$$
+$$\frac{\partial^2 u_{G,t}}{\partial^2 \text{EA}_{t}}=\alpha\cdot(\alpha-1)\cdot\text{EA}_{t}^{\alpha-2}\cdot\text{EQ}_{t}^{1-\alpha}<0$$
+$$\frac{\partial^2 u_{G,t}}{\partial^2 \text{EQ}_{t}}=(1-\alpha)\cdot(-\alpha)\cdot\text{EA}_{t}^{\alpha-1}\cdot\text{EQ}_{t}^{-\alpha-1}<0$$
+
+Thus, we indeed have positive but diminishing returns for both $\text{EA}_{t}$ and $\text{EQ}_{t}$.
+
+\subsubsection{Complementarity of economic activity and environmental quality}
+\label{sec:properties_utility_function_gov_2}
+
+For $EA_{t}$ the economic activity and $EQ_{t}$ the environmental quality to be complements, the crosse-derivative has to be positive. 
+We compute :  
+$$\frac{\partial^2 u_{G,t}}{\partial \text{EA}_{t} \partial \text{EQ}_{t}}=\alpha\cdot(1-\alpha)\cdot\text{EA}_{t}^{\alpha-1}\cdot\text{EQ}_{t}^{-\alpha}>0$$
+
+Thus, $EA_{t}$ and $EQ_{t}$ are complement. This means that in this model, the government does not prefer a world without economic activity or without some environmental quality, but it prefers a mixture of them. 
+
+\subsection{First Order Conditions}
+\label{sec:proof3}
+Differentiating the Lagrangian with respect to the R\&D investment $r_{t}$ gives:
+$$\frac{\partial \mathcal{L}}{\partial r_{t}}=0$$
+$$\Leftrightarrow\frac{\tau_{t}\cdot m_{t}}{c_{t}\cdot r^{2}_{t}}-\lambda=0$$
+$$\Leftrightarrow\lambda=\frac{\tau_{t}\cdot m_{t}}{c_{t}\cdot r^{2}_{t}}$$
+Differentiating the Lagrangian with respect to the manufacturing investment $m_{t}$ gives:
+$$\frac{\partial \mathcal{L}}{\partial m_{t}}=0$$
+$$\Leftrightarrow\frac{p_{t}-c_{t}}{c_{t}}-\frac{\tau_{t}}{c_{t}\cdot r_{t}}-\lambda=0$$
+$$\Leftrightarrow\frac{p_{t}-c_{t}}{c_{t}}-\frac{\tau_{t}}{c_{t}\cdot r_{t}}-\frac{\tau_{t}\cdot m_{t}}{c_{t}\cdot r^{2}_{t}}=0$$
+$$\Leftrightarrow{r^{2}{t}}\cdot(p{t}-c_{t})-r_{t}\cdot \tau_{t}-\tau_{t}\cdot m_{t}=0$$
+Hence the manufacturing investment is:
+\begin{equation}\tag{5}
+    m_{t}=\frac{1}{\tau_{t}}\left(r_{t}^{2}(p_{t}-c_{t})-r_{t}\cdot \tau_{t}\right)=\frac{r_{t}^{2}\left(p_{t}-c_{t}\right)}{\tau_{t}}-r_{t}
+\end{equation}
+
+\subsection{Optimal Level of Research}
+\label{sec:proof4}
+Starting with the Budget constraint of the firm:
+$$B_{t}=r_{t}+m_{t}$$
+Plugging into the constraint the expression for $m_{t}$ we had found earlier gives:
+$$B_{t}=r_{t}+\frac{r_{t}^{2}\left(p_{t}-c_{t}\right)}{\tau_{t}}-r_{t}$$
+$$\Leftrightarrow{B_{t}=\frac{r_{t}^{2}\left(p_{t}-c_{t}\right)}{\tau_{t}}}$$
+Rearranging the expression with respect to the research level ${r_{t}}$ gives:
+\begin{equation}\tag{6}
+    r_{t}=\sqrt{\frac{B_{t}\cdot \tau_{t}}{p_{t}-c_{t}}}
+\end{equation}
+
+\subsection{Maximum Profit}
+\label{sec:proof5}
+
+The First Order Condition is:
+$$\pi_{t}= \frac{m_{t}}{c_{t}}\cdot\left(p_{t}-c_{t}\right)-\tau_{t}\cdot \frac{m_{t}}{c_{t}}\cdot \frac{1}{r_{t}}$$
+Factorising by $\frac{m_{t}}{c_{t}}$ gives:
+$$\pi_{t}=\frac{m_{t}}{c_{t}}\cdot\left(p_{t}-c_{t}-\frac{\tau_{t}}{r_{t}}\right)$$
+We now plug in the expression for $r_{t}$:
+$$\pi_{t}=\frac{m_{t}}{c_{t}}\cdot\left(p_{t}-c_{t}-\frac{\tau_{t}}{\sqrt{\frac{B_{t}\cdot \tau_{t}}{p_{t}-c_{t}}}}\right)$$
+Which is equivalent to:
+$$\pi_{t}=\frac{m_{t}}{c_{t}}\cdot\left(p_{t}-c_{t}-\sqrt{\frac{\tau_{t}(p_{t}-c_{t})}{B_{t}}}\right)$$
+We now plug in the expression for $m_{t}$:
+$$\pi_{t}=\frac{B_{t}-\sqrt{\frac{B_{t}\cdot \tau_{t}}{p_{t}-c_{t}}}}{c_{t}}\cdot\left(p_{t}-c_{t}-\sqrt{\frac{\tau_{t}(p_{t}-c_{t})}{B_{t}}}\right)$$
+Factorising by $B_{t}$ gives:
+$$\pi_{t}=\frac{1}{c_{t}}\cdot\sqrt{B_{t}}\left(\sqrt{B_{t}}-\sqrt{\frac{\tau_{t}}{p_{t}-c_{t}}}\right)\cdot\left(\frac{\sqrt{B_{t}}(p_{t}-c_{t})-\sqrt{\tau_{t}(p_{t}-c_{t})}}{\sqrt{B_{t}}}\right)$$
+We now simplify by $\sqrt{B_{t}}$:
+$$\pi_{t}=\frac{1}{c_{t}}\cdot\left(\sqrt{B_{t}}-\sqrt{\frac{\tau_{t}}{p_{t}-c_{t}}}\right)\cdot\left(\sqrt{B_{t}}(p_{t}-c_{t})-\sqrt{\tau_{t}(p_{t}-c_{t})}\right)$$
+$$\Leftrightarrow\pi_{t}=\frac{1}{c_{t}}\cdot\left(\frac{\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sqrt{\tau_{t}}}{\sqrt{p_{t}-c_{t}}}\right)\cdot\left(\sqrt{B_{t}}(p_{t}-c_{t})-\sqrt{\tau_{t}(p_{t}-c_{t})}\right)$$
+Dividing by $\sqrt(p_{t}-c_{t})$:
+$$\pi_{t}=\frac{1}{c_{t}}\cdot\left({\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sqrt{\tau_{t}}}\right)\cdot\left(\sqrt{B_{t}}(\sqrt{p_{t}-c_{t}})-\sqrt{\tau_{t}}\right)$$
+The simplified version of the profit function is therefore
+\begin{equation}\tag{7}
+    \pi_{t}=\frac{1}{c_{t}}\cdot\left({\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sqrt{\tau_{t}}}\right)^{2}
+\end{equation}
+\subsection{Government maximisation problem}
+\label{sec:proof6}
+The government maximisation problem is:
+$$\max_{\tau_{t}}{\left(\frac{1}{c_{t}}\cdot\left({\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sqrt{\tau_{t}}}\right)^{2}\right)^{\alpha}\cdot {e^{-q_{t}\cdot g_{t}}}^{(1-\alpha)}}$$
+We know that:
+$$q_{t}\cdot g_{t}=\frac{m_{t}}{c_{t}}\cdot\frac{1}{r_{t}}=\frac{1}{c_{t}}\left(B_{t}-\sqrt{\frac{B_{t}\cdot \tau_{t}}{p_{t}-c_{t}}}\right)\left(\frac{\sqrt{p_{t}-c_{t}}}{\sqrt{B_{t}\cdot \tau_{t}}}\right)$$
+$$\Leftrightarrow{q_{t}}\cdot g_{t}=\frac{1}{c_{t}}\cdot \left(\frac{\sqrt{B_{t}\cdot(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}-1\right)=\frac{1}{c_{t}}\cdot \frac{\sqrt{B_{t}\cdot(p_{t}-c_{t})}-\sqrt{\tau_{t}}}{\sqrt{\tau_{t}}}$$
+We can now plug the expression for $q_{t}\cdot g_{t}$ in the government's utility function:
+$${u_{G,t}=\left(\frac{1}{c_{t}}\cdot\left({\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sqrt{\tau_{t}}}\right)^{2}\right)^{\alpha}\cdot {e^{-\frac{1}{c_{t}}\cdot \frac{\sqrt{B_{t}\cdot(p_{t}-c_{t})}-\sqrt{\tau_{t}}}{\sqrt{\tau_{t}}}}}^{(1-\alpha)}}$$
+The simplified utility function of the government is therefore:
+$${u_{G,t}=\frac{1}{c_{t}^\alpha}\cdot\left({\sqrt{B_{t}\cdot (p_{t}-c_{t})}-\sqrt{\tau_{t}}}\right)^{2\cdot\alpha}\cdot {e^{-(1-\alpha)\cdot\frac{1}{c_{t}}\cdot \frac{\sqrt{B_{t}\cdot(p_{t}-c_{t})}-\sqrt{\tau_{t}}}{\sqrt{\tau_{t}}}}}}$$
+
+\subsection{Optimal pollution tax}
+\label{sec:proof7}
+
+To find the optimal pollution tax, we set the derivative of the social utility function to zero : 
+
+\begin{equation}\tag{9}
+    u_{G,t}=\frac{e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot\left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha}}{c^{\alpha}\cdot e^{\frac{1}{c_{t}}\cdot(1-\alpha)\cdot\frac{\sqrt{B_{t}(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}}}
+\end{equation}
+We see that this function is of form $f(\tau_{t})=\frac{u(\tau_{t})}{v(\tau_{t})}$, therefore its derivative is of form $f'(\tau_{t})=\frac{u'(\tau)v(\tau_{t})-v'(\tau_{t})u(\tau_{t})}{v^2(\tau_{t})}$. To have its derivative equal to zero, we only need $u'(\tau_{t})v(\tau_{t})-v'(\tau_{t})u(\tau_{t})=0$, with :
+\begin{equation*}
+    \begin{cases}
+        u(\tau_{t})= e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot\left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha}\\
+        v(\tau_{t})= c^{\alpha}\cdot e^{\frac{1}{c_{t}}\cdot(1-\alpha)\cdot\frac{\sqrt{B_{t}(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}}
+    \end{cases}
+\end{equation*}
+Now computing the First Order Conditions:
+\begin{equation*}
+    \begin{cases}
+        \frac{\partial u(\tau_{t})}{\partial \tau_{t}}= e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot \tau_{t}^{-\frac{1}{2}}\cdot \left(-\frac{1}{2}\right)\cdot 2\alpha \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha-1} \\
+        \frac{\partial v(\tau_{t})}{\partial \tau_{t}}= c_{t}^{\alpha}\cdot e^{\frac{1}{c_{t}}\cdot(1-\alpha)\cdot\frac{\sqrt{B_{t}(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}}\cdot \frac{1}{c_{t}}(1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\left(-\frac{1}{2}\right)\cdot\tau_{t}^{-\frac{3}{2}}
+    \end{cases}
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \begin{cases}
+        \frac{\partial u(\tau_{t})}{\partial \tau_{t}}= -\alpha\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot \tau_{t}^{-\frac{1}{2}}\cdot \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha-1} \\
+        \frac{\partial v(\tau_{t})}{\partial \tau_{t}}= -\frac{c_{t}^{\alpha-1}}{2}\cdot e^{\frac{1}{c_{t}}\cdot(1-\alpha)\cdot\frac{\sqrt{B_{t}(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}}\cdot (1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\tau_{t}^{-\frac{3}{2}}
+    \end{cases}
+\end{equation*}
+
+Thus we can compute : 
+\begin{equation*}
+    u'(\tau_{t})v(\tau_{t})-v'(\tau_{t})u(\tau_{t})=0
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \begin{split}
+    & -\alpha\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot \tau_{t}^{-\frac{1}{2}}\cdot \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha-1} \cdot  c^{\alpha}\cdot e^{\frac{1}{c_{t}}\cdot(1-\alpha)\cdot\frac{\sqrt{B_{t}(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}} \\
+    & +\frac{c_{t}^{\alpha-1}}{2}\cdot e^{\frac{1}{c_{t}}\cdot(1-\alpha)\cdot\frac{\sqrt{B_{t}(p_{t}-c_{t})}}{\sqrt{\tau_{t}}}}\cdot (1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\tau_{t}^{-\frac{3}{2}}\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot\left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha}=0
+    \end{split}
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \begin{split}
+    & \alpha\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot \tau_{t}^{-\frac{1}{2}}\cdot \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha-1} \cdot  c^{\alpha} = \\
+    & \frac{c_{t}^{\alpha-1}}{2}\cdot (1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\tau_{t}^{-\frac{3}{2}}\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot\left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha}
+    \end{split}
+\end{equation*}
+We simplify by $\left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{2\alpha}$:
+\begin{equation*}
+    \begin{split}
+    & \alpha\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}\cdot \tau_{t}^{-\frac{1}{2}}\cdot \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{-1} \cdot  c^{\alpha} = \\
+    & \frac{c_{t}^{\alpha-1}}{2}\cdot (1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\tau_{t}^{-\frac{3}{2}}\cdot e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}
+    \end{split}
+\end{equation*}
+We divide by $e^{\frac{1}{c_{t}}\cdot\left(1-\alpha\right)}$ and by $c_{t}^{\alpha}$:
+\begin{equation*}
+    \alpha\cdot \tau_{t}^{-\frac{1}{2}}\cdot \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{-1} = \frac{1}{2\cdot c_{t}}\cdot (1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\tau_{t}^{-\frac{3}{2}} 
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \alpha\cdot \left(\sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}}\right)^{-1} = \frac{1}{2\cdot c_{t}}\cdot (1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}\cdot\tau_{t}^{-1} 
+\end{equation*}
+Rearranging:
+\begin{equation*}
+    \tau_{t}\cdot\frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)\cdot\sqrt{B_{t}(p_{t}-c_{t})}}= \sqrt{B(p_{t}-c_{t})}-\sqrt{\tau_{t}} 
+\end{equation*}
+Multiplying both sides by $\sqrt{B_{t}(p_{t}-c_{t})}$ and rearranging:
+\begin{equation*}
+    \tau_{t}\cdot\frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}=B_{t}(p_{t}-c_{t})-\sqrt{\tau_{t}}\cdot\sqrt{B_{t}(p_{t}-c_{t})} 
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \tau_{t}\cdot\frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}-B_{t}(p_{t}-c_{t})=-\sqrt{\tau_{t}}\cdot\sqrt{B_{t}(p_{t}-c_{t})}
+\end{equation*}
+We now square both sides of the expression:
+\begin{equation*}
+    \tau_{t}^{2}\cdot\left(\frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}\right)^{2}-2\cdot\tau_{t}\cdot B_{t}\left(p_{t}-c_{t}\right)\cdot \frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}+\left(B_{t}(p_{t}-c_{t})\right)^{2}={\tau_{t}}\cdot{B_{t}(p_{t}-c_{t})}
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \tau_{t}^{2}\cdot\left(\frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}\right)^{2}-2\cdot\tau_{t}\cdot B_{t}\left(p_{t}-c_{t}\right)\cdot \frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}-{\tau_{t}}\cdot{B_{t}(p_{t}-c_{t})}+\left(B_{t}(p_{t}-c_{t})\right)^{2}=0
+\end{equation*}
+Factorizing by $-{\tau_{t}}\cdot{B_{t}(p_{t}-c_{t})}$ gives:
+\begin{equation*}
+    \tau_{t}^{2}\cdot\left(\frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}\right)^{2}+\tau_{t}\cdot \left(-B_{t}\right)\left(p_{t}-c_{t}\right)\left(2\cdot \frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}+1\right)+\left(B_{t}(p_{t}-c_{t})\right)^{2}=0
+\end{equation*}
+This is a standard quadratic equation $\tau_{t}^{2}\cdot a+\tau_{t}\cdot b + c =0$ that accepts two solutions : 
+
+$$\tau^{*}=\frac{-b\pm\sqrt{b^2-4\cdot a\cdot c}}{2\cdot a}$$
+
+With : 
+
+\begin{itemize}
+    \item $a = \left(\frac{\alpha \cdot 2\cdot c_{t}}{1-\alpha}\right)^{2}$
+    \item $b = \left(-B_{t}\right)\left(p_{t}-c_{t}\right)\left(2\cdot \frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}+1\right)$
+    \item $c = \left(B_{t}(p_{t}-c_{t})\right)^{2}$
+\end{itemize}
+The solution $\tau^{*}=\frac{-b+\sqrt{b^2+4\cdot a\cdot c}}{2\cdot a}$ does not make sense in the context of this problem, so we have the optimal tax : 
+
+\begin{equation*}
+    \tau_{t}^{*}=\frac{-b-\sqrt{b^2-4\cdot a\cdot c}}{2\cdot a}
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \tau_{t}^{*}=\frac{B_{t}\left(p_{t}-c_{t}\right)\left(2\cdot \frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}+1\right)-\sqrt{\left(B_{t}\left(p_{t}-c_{t}\right)\right)^{2}\left(2\cdot \frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}+1\right)^2-4\cdot \left(\frac{\alpha \cdot 2\cdot c_{t}}{1-\alpha}\right)^{2}\cdot \left(B_{t}(p_{t}-c_{t})\right)^{2}}}{2\cdot \left(\frac{\alpha \cdot 2\cdot c_{t}}{1-\alpha}\right)^{2}}
+\end{equation*}
+We now factorise by $(B_{t}\left(p_{t}-c_{t}\right))^2$:
+\begin{equation*}
+    \tau_{t}^{*}=\frac{B_{t}\left(p_{t}-c_{t}\right)\left(2\cdot \frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}+1\right)-\sqrt{\left(B_{t}\left(p_{t}-c_{t}\right)\right)^{2}\left[\left(2\cdot \frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}+1\right)^2-4\cdot \left(\frac{\alpha \cdot 2\cdot c_{t}}{1-\alpha}\right)^{2}\right]}}{2\cdot \left(\frac{\alpha \cdot 2\cdot c_{t}}{1-\alpha}\right)^{2}}
+\end{equation*}
+We factorise again:
+\begin{equation*}
+    \tau_{t}^{*}=\frac{B_{t}\left(p_{t}-c_{t}\right)\left(2\cdot \frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}+1\right)-B_{t}\left(p_{t}-c_{t}\right)\sqrt{\left(2\cdot \frac{\alpha \cdot 2\cdot c_{t}}{(1-\alpha)}+1\right)^2-4\cdot \left(\frac{\alpha \cdot 2\cdot c_{t}}{1-\alpha}\right)^{2}}}{2\cdot \left(\frac{\alpha \cdot 2\cdot c_{t}}{1-\alpha}\right)^{2}}
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \tau_{t}^{*}=\frac{B_{t}\left(p_{t}-c_{t}\right)\left[\left(2\cdot \frac{\alpha \cdot 2\cdot c_{t}}{1-\alpha}+1\right)-\sqrt{\left(2\cdot \frac{\alpha \cdot 2\cdot c_{t}}{1-\alpha}+1\right)^2-4\cdot \left(\frac{\alpha \cdot 2\cdot c_{t}}{1-\alpha}\right)^{2}}\right]}{2\cdot \left(\frac{\alpha \cdot 2\cdot c_{t}}{1-\alpha}\right)^{2}}
+\end{equation*}
+We factorise by $\sqrt{\frac{1}{(1-\alpha)^{2}}}$
+\begin{equation*}
+    \tau_{t}^{*}=\frac{B_{t}\left(p_{t}-c_{t}\right)\left[\left(\frac{\alpha \cdot 4\cdot c_{t}+1-\alpha}{1-\alpha}\right)-\sqrt{\left(\frac{\alpha \cdot 4\cdot c_{t}+1-\alpha}{1-\alpha}\right)^2-\frac{\alpha^{2} \cdot 16\cdot c_{t}^{2}}{(1-\alpha)^{2}}}\right]}{\frac{\alpha^{2} \cdot 8\cdot c_{t}^{2}}{(1-\alpha)^{2}}}
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \tau_{t}^{*}=\frac{B_{t}\left(p_{t}-c_{t}\right)\left[\left(\frac{\alpha \cdot 4\cdot c_{t}+1-\alpha}{1-\alpha}\right)-\sqrt{\frac{1}{(1-\alpha)^{2}}\left(\left(\alpha \cdot 4\cdot c_{t}+1-\alpha\right)^2-\left(\alpha^{2} \cdot 16\cdot c_{t}^{2}\right)\right)}\right]} {\frac{\alpha^{2} \cdot 8\cdot c_{t}^{2}}{(1-\alpha)^{2}}}
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \tau_{t}^{*}=\frac{B_{t}\left(p_{t}-c_{t}\right)\left[\left(\frac{\alpha \cdot 4\cdot c_{t}+1-\alpha}{1-\alpha}\right)-\frac{1}{(1-\alpha)}\sqrt{\alpha^{2} \cdot 16\cdot c_{t}^{2}+(1-\alpha)^{2}+2\cdot \alpha\cdot4\cdot c_{t}(1-\alpha)-\alpha^{2} \cdot 16\cdot c_{t}^{2}}\right]} {\frac{\alpha^{2} \cdot 8\cdot c_{t}^{2}}{(1-\alpha)^{2}}}
+\end{equation*}
+$$\iff$$
+\begin{equation*}
+    \tau_{t}^{*}=\frac{B_{t}\left(p_{t}-c_{t}\right)(\frac{1}{1-\alpha})\left[{\alpha \cdot 4\cdot c_{t}+1-\alpha}-\sqrt{(1-\alpha)^{2}+2\cdot \alpha\cdot4\cdot c_{t}(1-\alpha)}\right]} {\frac{\alpha^{2} \cdot 8\cdot c_{t}^{2}}{(1-\alpha)^{2}}}
+\end{equation*}
+$$\iff$$
+\begin{equation*}\tag{10}
+    \tau_{t}^{*}=\frac{B_{t}\left(p_{t}-c_{t}\right)(1-\alpha)\left[{\alpha \cdot 4\cdot c_{t}+1-\alpha}-\sqrt{(1-\alpha)^{2}+\alpha\cdot8\cdot c_{t}(1-\alpha)}\right]} {\alpha^{2} \cdot 8\cdot c_{t}^{2}}
+\end{equation*}
+
+
+\bibliography{references} 
+\bibliographystyle{plain} % Style of bibliography
+\addcontentsline{toc}{section}{References}
+\nocite{*}
+
+\end{document}
